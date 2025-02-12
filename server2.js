@@ -14,7 +14,7 @@ app.get("/", (request, response) => {
 });
 
 app.get("/login", (request, response) => {
-    response.send("Login");
+    response.render("login.html");
 });
 
 app.get("/signup", (request, response) => {
