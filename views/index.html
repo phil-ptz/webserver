@@ -1,9 +1,62 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <!-- head definitions go here -->
-    </head>
-    <body>
-        Index.html
-    </body>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGuide - Willkommen</title>
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css"> 
+</head>
+<body>
+<!-- Logo Platzhalter -->
+<header id="header">
+    <div id="logo" class="logo">[Logo]</div>
+</header>
+
+<!-- Hero Bereich mit Titel und Untertitel -->
+<section id="hero" class="section">
+    <h1 class="title">FitGuide</h1>
+    <h2 class="subtitle">Dein Begleiter für Training & Ernährung</h2>
+</section>
+
+<!-- Beschreibung -->
+<section id="beschreibung" class="section">
+    <h3 class="section-title">Beschreibung</h3>
+    <ul class="description-list">
+        <li class="description-item">Individuelle Trainingspläne</li>
+        <li class="description-item">Ernährungstipps für deine Ziele</li>
+        <li class="description-item">Wissenschaftlich fundierte Methoden</li>
+        <li class="description-item">Community-Support</li>
+    </ul>
+    <button id="learn-more" class="btn">Learn more</button>
+</section>
+
+
+<!-- Registrieren / Einloggen -->
+<section id="auth" class="section">
+    <h3 class="section-title">Registrieren / Einloggen</h3>
+    <button id="register-btn" class="btn">Registrieren</button>
+    <button id="login-btn" class="btn">Einloggen</button>
+    <script>
+    document.getElementById('login-btn').addEventListener('click', function() {
+      window.location.href = 'login.html';
+    });
+  </script>
+</section>
+
+<!-- Timer für begrenztes Angebot -->
+<section id="timer" class="section">
+    <p class="timer-text">Spezielles Angebot endet in: <span id="countdown" class="countdown">00:00:00</span></p>
+</section>
+
+<!-- Rezensionen -->
+<section id="rezensionen" class="section">
+    <h3 class="section-title">Rezensionen</h3>
+    <div id="bewertungen" class="reviews">
+        <p class="review-text">Benutzerbewertungen</p>
+        <button id="view-all-reviews" class="btn">Alle ansehen</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
 </html>
