@@ -16,6 +16,29 @@ app.engine('html', require('ejs').renderFile);
 const port = 5500;
 const dbPath = "../database/user_information.json";
 
+// functions
+function pushUser (user) {
+
+    fs.readFile(dbPath, "utf8", (error, data) => {
+        if (error) {
+            console.log("Fehler beim laden der Datenbank.");
+            return error;
+        }
+        dataObject = JSON.parse(data);
+        userObject = JSON.parse(user);
+        dataObject.push(userObject);
+        fs.writeFile(dbPath, JSON.stringify(dataObject), (error) => {
+        if (error) {
+            console.log("Fehler beim Speichern der Daten.");
+            console.log(error);
+            return error;
+        } else {
+            console.log("Daten erfolgreich gespeichert.");
+        }
+    });
+    })
+}
+
 // routes
 app.get("/", (request, response) => {
     response.render("index.html");
@@ -29,13 +52,10 @@ app.post("/", (request, response) => {
 });
 app.post("/login", (request, response) => {
    var body = JSON.stringify(request.body);
-   fs.writeFile(dbPath, body, (error) => {
-    if (error) {
-        console.log(error);
-    } else {
+   var error = pushUser(body);
+   if (error == null) {
         response.send("Daten wurden gesendet.");
-    }
-   });
+   }
 });
 
 // main listen
