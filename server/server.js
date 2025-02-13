@@ -22,6 +22,7 @@ function pushUser (user) {
     fs.readFile(dbPath, "utf8", (error, data) => {
         if (error) {
             console.log("Fehler beim laden der Datenbank.");
+            console.log(error);
             return error;
         }
         dataObject = JSON.parse(data);
