@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitGuide - Menü</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!-- Kopfbereich mit Logo -->
+<header id="header">
+    <div id="logo" class="logo">[Logo]</div>
+</header>
+
+<!-- Hauptmenü -->
+<section id="menu" class="section">
+    <h1 class="title">Willkommen im FitGuide Menü</h1>
+    <nav id="menu-options">
+        <ul class="menu-list">
+            <li class="menu-item"><a href="trainingsplan.html" id="trainingsplan-link">Trainingsplan</a></li>
+            <li class="menu-item"><a href="ernaehrungsplan.html" id="ernaehrungsplan-link">Ernährungsplan</a></li>
+            <li class="menu-item"><a href="#rezensionen" id="rezensionen-link">Rezensionen</a></li>
+            <li class="menu-item"><a href="index.html" id="logout-link">Ausloggen</a></li>
+        </ul>
+    </nav>
+</section>
+
+<!-- Rezensionen Abschnitt -->
+<section id="rezensionen" class="section">
+    <h3 class="section-title">Rezensionen</h3>
+    <div id="bewertungen" class="reviews">
+        <p class="review-text">Benutzerbewertungen</p>
+        <button id="view-all-reviews" class="btn">Alle ansehen</button>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
