@@ -6,11 +6,17 @@ body {
     color: #333;
 }
 
-header {
+nav {
     background-color: #4CAF50;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 10px;
     color: white;
-    text-align: center;
-    padding: 20px 0;
 }
 
 .section {
