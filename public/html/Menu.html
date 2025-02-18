@@ -3,29 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitGuide - Menü</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>FitGuide - Willkommen</title>
+    <link rel="icon" href="/media/img/icon/white/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
 </head>
 <body>
-<!-- Kopfbereich mit Logo -->
-<header id="header">
-    <div id="logo" class="logo">[Logo]</div>
-</header>
 
-<!-- Hauptmenü -->
-<section id="menu" class="section">
-    <h1 class="title">Willkommen im FitGuide Menü</h1>
-    <nav id="menu-options">
-        <ul class="menu-list">
-            <li class="menu-item"><a href="trainingsplan.html" id="trainingsplan-link">Trainingsplan</a></li>
-            <li class="menu-item"><a href="ernaehrungsplan.html" id="ernaehrungsplan-link">Ernährungsplan</a></li>
-            <li class="menu-item"><a href="#rezensionen" id="rezensionen-link">Rezensionen</a></li>
-            <li class="menu-item"><a href="index.html" id="logout-link">Ausloggen</a></li>
-        </ul>
-    </nav>
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Clients</a>
+    <a href="#">Contact</a>
+</div>
+
+<nav>
+    <img onclick="openNav()" src="/media/menu.png" style="width:32px;height:32px;"></img>
+    <a href="/">FitGuide</a>
+
+    <a href="/login">Log In</a>
+    <a href="/">Registrieren</a>
+</nav>
+
+<!-- Hero Bereich mit Titel und Untertitel -->
+<section id="hero" class="section">
+    <h1 class="title">FitGuide</h1>
+    <h2 class="subtitle">Dein Begleiter für Training & Ernährung</h2>
 </section>
 
-<!-- Rezensionen Abschnitt -->
+<!-- Beschreibung -->
+<section id="beschreibung" class="section">
+    <h3 class="section-title">Beschreibung</h3>
+    <ul class="description-list">
+        <li class="description-item">Individuelle Trainingspläne</li>
+        <li class="description-item">Ernährungstipps für deine Ziele</li>
+        <li class="description-item">Wissenschaftlich fundierte Methoden</li>
+        <li class="description-item">Community-Support</li>
+    </ul>
+    <button id="learn-more" class="btn">Learn more</button>
+</section>
+
+
+<!-- Registrieren / Einloggen -->
+<section id="auth" class="section">
+    <h3 class="section-title">Registrieren / Einloggen</h3>
+    <button id="register-btn" class="btn">Registrieren</button>
+    <button id="login-btn" class="btn">Einloggen</button>
+    <script>
+        document.getElementById('login-btn').addEventListener('click', function() {
+            window.location.href = '/login';
+        });
+    </script>
+</section>
+
+<!-- Timer für begrenztes Angebot -->
+<section id="timer" class="section">
+    <p class="timer-text">Spezielles Angebot endet in: <span id="countdown" class="countdown">60 Sekunden</span></p>
+</section>
+
+<!-- Rezensionen -->
 <section id="rezensionen" class="section">
     <h3 class="section-title">Rezensionen</h3>
     <div id="bewertungen" class="reviews">
@@ -34,6 +70,33 @@
     </div>
 </section>
 
-<script src="script.js"></script>
+<script>
+    var timeLeft = 60;
+    var elem = document.getElementById('countdown');
+
+    var timerId = setInterval(countdown, 1000);
+
+    function countdown() {
+        if (timeLeft == -1) {
+            clearTimeout(timerId);
+            doSomething();
+        } else {
+            elem.innerHTML = timeLeft + ' Sekunden';
+            timeLeft--;
+        }
+    }
+
+    /* Set the width of the side navigation to 250px */
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+    }
+
+    /* Set the width of the side navigation to 0 */
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+</script>
 </body>
 </html>
+
+
