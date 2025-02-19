@@ -25,7 +25,7 @@ body {
 	padding: 10px 0;
 }
 
-#iqjl {
+#testimonial-column {
 	flex: 0 1 auto;
 }
 
@@ -47,7 +47,7 @@ body {
 	transition: color 0.3s ease 0s;
 }
 
-#id7x {
+#main-login-button {
 	flex: 0 1 auto;
 	display: block;
 	padding-left: 10px;
@@ -72,7 +72,7 @@ body {
 	box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
 }
 
-#i6po {
+#footer-copyright {
 	justify-content: center;
 	position: sticky;
 	top: 15px;
@@ -82,12 +82,12 @@ body {
 	padding-right: 20px;
 }
 
-#itjq {
+#testimonial-item-2-image {
 	width: 100%;
 	max-width: 1200px;
 }
 
-#iucmr {
+#testimonial-item-2-location {
 	display: block;
 	padding-top: 0px;
 	padding-bottom: 0px;
@@ -98,29 +98,29 @@ body {
 	padding-bottom: 0px;
 }
 
-#icfyb {
+#main-content-row {
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-#irtfd {
+#testimonial-item-1-image-column {
 	flex: 0 1 auto;
 }
 
-#i88iz {
+#footer-logo-icon {
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding-left: 20px;
 	padding-right: 20px;
 }
 
-#icyzp {
+#main-image {
 	flex: 0 1 auto;
 }
 
-#irz7b {
+#testimonial-item-1-location {
 	justify-content: center;
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -128,7 +128,7 @@ body {
 	padding-right: 20px;
 }
 
-#iycz3 {
+#testimonials-row {
 	max-width: 1200px;
 	align-items: center;
 	display: flex;
@@ -136,19 +136,19 @@ body {
 	gap: 10px;
 }
 
-#irjua {
+#testimonial-item-1-image {
 	font-size: 3rem;
 	text-align: center;
 }
 
-#itndw {
+#testimonial-item-2-image-column {
 	padding: 10px;
 	max-width: 750px;
 	margin-bottom: 25px;
 	text-align: center;
 }
 
-#i3vvs {
+#feature-column {
 	color: black;
 	border-top-left-radius: 35px;
 	border-top-right-radius: 35px;
@@ -166,7 +166,7 @@ body {
 	font-size: 1.2rem;
 }
 
-#iau9 {
+#logo-column {
 	font-family: Arial, Helvetica, sans-serif;
 	background-image: linear-gradient(180deg, rgba(59, 130, 245, 0.11), white 14%);
 	background-position: 0px 0px;
@@ -177,12 +177,12 @@ body {
 	color: #475569;
 }
 
-#ij2gh {
+#newsletter-heading {
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 }
 
-#igrx8 {
+#nav-column {
 	padding: 10px;
 	max-width: 750px;
 	margin-bottom: 25px;
@@ -190,7 +190,7 @@ body {
 	padding-right: 0px;
 }
 
-#i466d {
+#feature-row {
 	color: black;
 	border-top-left-radius: 35px;
 	border-top-right-radius: 35px;
@@ -199,14 +199,14 @@ body {
 	max-width: 100%;
 }
 
-#imymf {
+#recipes-column {
 	max-width: 1200px;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 }
 
-#feature-section {
+#calculator-link {
 	justify-content: center;
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -214,35 +214,35 @@ body {
 	padding-right: 20px;
 }
 
-#ib541 {
+#logo-icon {
 	gap: 100px;
 	justify-content: space-between;
 }
 
-#iz8m8 {
+#training-plan-icon {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: center;
 }
 
-#in9ef {
+#recipes-image {
 	font-size: 1.5rem;
 }
 
-#i8isa {
+#footer-nav-column {
 	padding: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-#i8w4i {
+#footer-row {
 	max-width: 1200px;
 	display: flex;
 	flex-direction: column;
 }
 
-#ioyxg {
+#studies-column {
 	justify-content: center;
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -250,13 +250,13 @@ body {
 	padding-right: 20px;
 }
 
-#iiacm {
+#newsletter-button {
 	font-size: 2.5rem;
 	margin-bottom: 10px;
 	max-width: 750px;
 }
 
-#ixzh1 {
+#testimonial-text {
 	width: 100%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -274,7 +274,7 @@ body {
 	min-width: 30%;
 }
 
-#ia21sa {
+#header-column {
 	padding: 10px;
 	max-width: 750px;
 	margin-bottom: 70px;
@@ -282,13 +282,13 @@ body {
 	padding-right: 0px;
 }
 
-#ihap8q {
+#nav-links-column {
 	font-size: 2.5rem;
 	margin-bottom: 10px;
 	text-align: center;
 }
 
-#i6fjjy {
+#footer-column {
 	padding: 10px;
 	max-width: 750px;
 	margin-bottom: 70px;
@@ -297,7 +297,7 @@ body {
 	text-align: center;
 }
 
-#ia7pcr {
+#header-row {
 	color: black;
 	border-top-left-radius: 100%;
 	border-top-right-radius: 100%;
@@ -319,25 +319,25 @@ body {
 	border-left-color: rgb(36, 99, 235);
 }
 
-#iqroa4 {
+#testimonial-heading {
 	font-size: 1.5rem;
 }
 
-#i5k4nf {
+#features-row {
 	width: 100%;
 	flex-wrap: wrap;
 	justify-content: flex-start;
 	gap: 50px;
 }
 
-#infwen {
+#recipes-subheading {
 	max-width: 1200px;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 }
 
-#testimonial-section {
+#training-plans-link {
 	justify-content: center;
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -345,7 +345,7 @@ body {
 	padding-right: 20px;
 }
 
-#inea73 {
+#recipes-image-column {
 	justify-content: space-between;
 }
 
@@ -378,7 +378,7 @@ body {
 	border-left-color: rgba(0, 0, 0, 0.06);
 }
 
-#idva29 {
+#more-features-heading {
 	flex: 0 1 auto;
 }
 
@@ -388,23 +388,23 @@ body {
 	align-items: center;
 }
 
-#iaqf2c {
+#login-button {
 	color: rgba(0, 0, 0, 0.5);
 }
 
-#it3yug {
+#testimonial-item-2 {
 	padding: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-#i8gt4n {
+#footer-logo-link {
 	padding: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-#ixzdlj {
+#testimonial-section {
 	color: black;
 	border-top-left-radius: 100%;
 	border-top-right-radius: 100%;
@@ -426,35 +426,35 @@ body {
 	border-left-style: solid;
 }
 
-#inucqu {
+#recipes-text {
 	flex: 0 1 auto;
 }
 
-#i04ztt {
+#calorie-calculator-column {
 	font-size: 1.5rem;
 }
 
-#ia9ts3 {
+#home-link {
 	color: rgba(0, 0, 0, 0.5);
 }
 
-#ish0zj {
+#testimonial-item-1-name {
 	width: 100%;
 	gap: 20px;
 	align-items: center;
 }
 
-#idndjn {
+#main-text {
 	justify-content: space-between;
 }
 
-#ilriti {
+#pricing-link {
 	max-width: 1200px;
 	display: flex;
 	flex-direction: column;
 }
 
-#iv3be5 {
+#testimonial-item-2-row {
 	justify-content: center;
 	padding-top: 80px;
 	padding-left: 20px;
@@ -462,21 +462,21 @@ body {
 	padding-bottom: 80px;
 }
 
-#im0rle {
+#recipes-button {
 	flex-direction: column;
 }
 
-#iih6cv {
+#newsletter-column {
 	display: block;
 	padding-top: 0px;
 	padding-bottom: 0px;
 }
 
-#iotp6j {
+#refund-link {
 	align-self: center;
 }
 
-#it6g1v {
+#testimonial-item-2-description {
 	padding: 10px;
 	text-align: center;
 	font-size: 0.8rem;
@@ -484,19 +484,19 @@ body {
 	opacity: 75%;
 }
 
-#ij7g8t {
+#newsletter-row {
 	display: block;
 }
 
-#ipjdtn {
+#studies-icon {
 	display: block;
 }
 
-#ikj01e {
+#newsletter-text {
 	display: block;
 }
 
-#i1hx7l {
+#calorie-calculator-heading {
 	display: flex;
 	gap: 30px;
 	flex: 0 1 auto;
@@ -505,7 +505,7 @@ body {
 	margin-bottom: 30px;
 }
 
-#i2sl68 {
+#contact-link {
 	display: block;
 }
 
@@ -532,11 +532,11 @@ body {
 	color: rgb(36, 99, 235);
 }
 
-#ism014 {
+#testimonial-item-1-row {
 	font-size: 2.5rem;
 }
 
-#in201n {
+#recipes-heading {
 	padding: 10px;
 	max-width: 750px;
 	margin-bottom: 35px;
@@ -546,7 +546,7 @@ body {
 	margin-top: 35px;
 }
 
-#ik2rdi {
+#newsletter-subheading {
 	max-width: 1200px;
 	align-items: center;
 	display: flex;
@@ -580,7 +580,7 @@ body {
 	box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
 }
 
-#iz29ek {
+#training-plan-heading {
 	justify-content: center;
 	padding-top: 80px;
 	padding-bottom: 80px;
@@ -603,17 +603,17 @@ body {
 	height: 50px;
 }
 
-#irfl3k {
+#testimonial-item-1-description {
 	width: 196px;
 	height: 41px;
 }
 
-#ip6zoj {
+#studies-heading {
 	width: 213px;
 	height: 44px;
 }
 
-#ihs4lb {
+#nav-row {
 	font-size: 1.2rem;
 	margin-bottom: 15px;
 }
@@ -631,32 +631,32 @@ body {
 	border-bottom-left-radius: 10px;
 }
 
-#ieu6p6 {
+#more-features-subheading {
 	font-size: 1.5rem;
 }
 
-#izqkf7 {
+#training-plan-text {
 	padding: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-#ica43q {
+#main-content-column {
 	font-size: 1.5rem;
 }
 
-#ickn3f {
+#main-heading {
 	padding: 10px;
 	padding-left: 0px;
 	padding-right: 0px;
 }
 
-#i83vu9 {
+#footer-logo-column {
 	font-size: 2.5rem;
 	text-align: center;
 }
 
-#infmy1 {
+#recipes-link {
 	padding: 10px;
 	font-family: Arial, Helvetica, sans-serif;
 	padding-left: 20px;
@@ -668,7 +668,7 @@ body {
 		flex-direction: column;
 	}
 
-	#i2d7qp {
+	#calorie-calculator-text {
 		flex-direction: row;
 	}
 
@@ -676,17 +676,17 @@ body {
 		flex-direction: row;
 	}
 
-	#iyd2 {
+	#training-plan-column {
 		flex-direction: row;
 	}
 
-	#it00l {
+	#testimonial-item-1-text-column {
 		flex-direction: row;
 	}
 }
 
 @media (max-width:768px) {
-	#iffs {
+	#more-features-text {
 		display: none;
 	}
 }
