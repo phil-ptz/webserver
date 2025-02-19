@@ -47,6 +47,9 @@ app.get("/", (request, response) => {
 app.get("/login", (request, response) => {
     response.render("login.html");
 });
+app.get("/registration", (request, response) => {
+    response.render("registration.html");
+});
 
 app.post("/", (request, response) => {
     response.render("index.html");
@@ -58,6 +61,7 @@ app.post("/login", (request, response) => {
         response.send("Daten wurden gesendet.");
    }
 });
+
 
 // main listen
 app.listen(port, () => {

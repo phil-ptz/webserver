@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrierung</title>
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+  <style>
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+    }
+
+    .register-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      text-align: center;
+    }
+
+    .register-container input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .register-container .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+      width: 100%;
+    }
+
+    .register-container .button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Registrierung</h1>
+  </header>
+
+  <main>
+    <div class="register-container">
+      <h2>Bitte registrieren</h2>
+      <form action="/register" method="POST">
+        <input type="email" name="username" placeholder="E-Mail-Adresse (als Benutzername)" required>
+        <input type="password" name="password" placeholder="Passwort" required>
+        <input type="password" name="confirm_password" placeholder="Passwort bestätigen" required>
+        <button type="submit" class="button">Registrieren</button>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Meine Registrierungs-Seite</p>
+  </footer>
+
+</body>
+</html>
