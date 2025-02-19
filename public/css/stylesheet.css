@@ -2,698 +2,121 @@
 	box-sizing: border-box;
 }
 
+/* index.html */
+
+.login-button {
+	background-color: white;
+	color: black;
+	border-radius: 2px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	display: inline-block;
+	cursor: pointer;
+	padding: 7px 10px;
+}
+
+/* login.html */
+
+/* allgemein */
 body {
+	display: flex;
+	flex-direction: column;
+	padding: 0;
+	margin: 0;
+	height: 100vh;
+}
+
+/* navbar leiste */
+header {
+	text-align: left;
 	margin: 0;
 }
 
-.gjs-heading {
-	margin: 0;
-	color: rgba(29, 40, 55, 1);
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2e558f;
+    color: white;
+    padding: 10px 20px;
 }
 
-.gjs-grid-column {
-	flex: 1 1 0%;
-	padding: 5px 0;
+.navbar-title {
+    font-size: 34px;
+    font-weight: bold;
 }
 
-.gjs-grid-row {
-	display: flex;
-	justify-content: flex-start;
-	align-items: stretch;
-	flex-direction: row;
-	min-height: auto;
-	padding: 10px 0;
-}
-
-#testimonial-column {
-	flex: 0 1 auto;
-}
-
-.gjs-link-box {
-	color: inherit;
-	display: inline-block;
-	vertical-align: top;
-	padding: 10px;
-	max-width: 100%;
-	text-decoration: none;
-}
-
-.gjs-link {
-	vertical-align: top;
-	max-width: 100%;
-	display: inline-block;
-	text-decoration: none;
-	color: inherit;
-	transition: color 0.3s ease 0s;
-}
-
-#main-login-button {
-	flex: 0 1 auto;
-	display: block;
-	padding-left: 10px;
-	padding-right: 10px;
-}
-
-#iffs {
-	flex: 0 1 auto;
-}
-
-#iyd2 {
+.navbar-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 	align-items: center;
-	justify-content: space-between;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	background-color: rgba(255, 255, 255, 0.8);
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-	backdrop-filter: blur(13px);
-	box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
 }
 
-#footer-copyright {
-	justify-content: center;
-	position: sticky;
-	top: 15px;
-	padding-top: 0px;
-	padding-bottom: 0px;
-	padding-left: 20px;
-	padding-right: 20px;
+.navbar-links li {
+    margin-left: 20px;
 }
 
-#testimonial-item-2-image {
-	width: 100%;
-	max-width: 1200px;
+.navbar-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
 }
 
-#testimonial-item-2-location {
-	display: block;
-	padding-top: 0px;
-	padding-bottom: 0px;
+.navbar-links a:hover {
+    color: #ffcc00;
 }
 
-#it00l {
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-#main-content-row {
-	padding: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-#testimonial-item-1-image-column {
-	flex: 0 1 auto;
-}
-
-#footer-logo-icon {
-	padding: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-#main-image {
-	flex: 0 1 auto;
-}
-
-#testimonial-item-1-location {
-	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-#testimonials-row {
-	max-width: 1200px;
-	align-items: center;
+/* anmeldungs- / registreirungs-container */
+main {
 	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 80vh;
+	flex: 1;
 	flex-direction: column;
-	gap: 10px;
 }
 
-#testimonial-item-1-image {
-	font-size: 3rem;
+main p {
+	padding: 0;
+	margin: 10px;
+}
+
+.login-container {
+	background-color: white;
+	padding: 30px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	width: 300px;
+	height: 300px;
 	text-align: center;
-}
-
-#testimonial-item-2-image-column {
-	padding: 10px;
-	max-width: 750px;
-	margin-bottom: 25px;
-	text-align: center;
-}
-
-#feature-column {
-	color: black;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	max-width: 100%;
-	margin-top: 38px;
-	margin-right: 38px;
-	margin-bottom: 38px;
-	margin-left: 38px;
-}
-
-.text-main-content {
-	line-height: 30px;
-	font-size: 1.2rem;
-}
-
-#logo-column {
-	font-family: Arial, Helvetica, sans-serif;
-	background-image: linear-gradient(180deg, rgba(59, 130, 245, 0.11), white 14%);
-	background-position: 0px 0px;
-	background-size: 100% 100%;
-	background-repeat: repeat;
-	background-attachment: scroll;
-	background-origin: padding-box;
-	color: #475569;
-}
-
-#newsletter-heading {
-	font-size: 1.2rem;
-	margin-bottom: 15px;
-}
-
-#nav-column {
-	padding: 10px;
-	max-width: 750px;
-	margin-bottom: 25px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#feature-row {
-	color: black;
-	border-top-left-radius: 35px;
-	border-top-right-radius: 35px;
-	border-bottom-right-radius: 35px;
-	border-bottom-left-radius: 35px;
-	max-width: 100%;
-}
-
-#recipes-column {
-	max-width: 1200px;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-}
-
-#calculator-link {
 	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
+	height: auto;
 }
 
-#logo-icon {
-	gap: 100px;
-	justify-content: space-between;
-}
-
-#training-plan-icon {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-}
-
-#recipes-image {
-	font-size: 1.5rem;
-}
-
-#footer-nav-column {
-	padding: 10px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#footer-row {
-	max-width: 1200px;
-	display: flex;
-	flex-direction: column;
-}
-
-#studies-column {
-	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-#newsletter-button {
-	font-size: 2.5rem;
-	margin-bottom: 10px;
-	max-width: 750px;
-}
-
-#testimonial-text {
+.login-container input {
 	width: 100%;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	gap: 50px;
-}
-
-.gjs-grid-column.feature-item {
-	padding-top: 15px;
-	padding-right: 15px;
-	padding-bottom: 15px;
-	padding-left: 15px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	min-width: 30%;
-}
-
-#header-column {
 	padding: 10px;
-	max-width: 750px;
-	margin-bottom: 70px;
-	padding-left: 0px;
-	padding-right: 0px;
+	margin: 10px 0;
+	border-radius: 5px;
+	border: 1px solid #ccc;
 }
 
-#nav-links-column {
-	font-size: 2.5rem;
-	margin-bottom: 10px;
-	text-align: center;
-}
-
-#footer-column {
-	padding: 10px;
-	max-width: 750px;
-	margin-bottom: 70px;
-	padding-left: 0px;
-	padding-right: 0px;
-	text-align: center;
-}
-
-#header-row {
-	color: black;
-	border-top-left-radius: 100%;
-	border-top-right-radius: 100%;
-	border-bottom-right-radius: 100%;
-	border-bottom-left-radius: 100%;
-	max-width: 100%;
-	width: 75px;
-	border-top-width: 3px;
-	border-right-width: 3px;
-	border-bottom-width: 3px;
-	border-left-width: 3px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: rgb(36, 99, 235);
-	border-right-color: rgb(36, 99, 235);
-	border-bottom-color: rgb(36, 99, 235);
-	border-left-color: rgb(36, 99, 235);
-}
-
-#testimonial-heading {
-	font-size: 1.5rem;
-}
-
-#features-row {
-	width: 100%;
-	flex-wrap: wrap;
-	justify-content: flex-start;
-	gap: 50px;
-}
-
-#recipes-subheading {
-	max-width: 1200px;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-}
-
-#training-plans-link {
-	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-#recipes-image-column {
-	justify-content: space-between;
-}
-
-.gjs-grid-column.testimonial-item {
-	padding-top: 15px;
-	padding-right: 15px;
-	padding-bottom: 15px;
-	padding-left: 15px;
-	display: flex;
-	flex-direction: column;
-	gap: 15px;
-	min-width: 45%;
-	background-color: rgba(247, 247, 247, 0.23);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	align-items: flex-start;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: rgba(0, 0, 0, 0.06);
-	border-right-color: rgba(0, 0, 0, 0.06);
-	border-bottom-color: rgba(0, 0, 0, 0.06);
-	border-left-color: rgba(0, 0, 0, 0.06);
-}
-
-#more-features-heading {
-	flex: 0 1 auto;
-}
-
-#i2d7qp {
-	width: 100%;
-	gap: 20px;
-	align-items: center;
-}
-
-#login-button {
-	color: rgba(0, 0, 0, 0.5);
-}
-
-#testimonial-item-2 {
-	padding: 10px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#footer-logo-link {
-	padding: 10px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#testimonial-section {
-	color: black;
-	border-top-left-radius: 100%;
-	border-top-right-radius: 100%;
-	border-bottom-right-radius: 100%;
-	border-bottom-left-radius: 100%;
-	max-width: 100%;
-	width: 75px;
-	border-top-width: 3px;
-	border-right-width: 3px;
-	border-bottom-width: 3px;
-	border-left-width: 3px;
-	border-top-color: rgb(36, 99, 235);
-	border-right-color: rgb(36, 99, 235);
-	border-bottom-color: rgb(36, 99, 235);
-	border-left-color: rgb(36, 99, 235);
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-}
-
-#recipes-text {
-	flex: 0 1 auto;
-}
-
-#calorie-calculator-column {
-	font-size: 1.5rem;
-}
-
-#home-link {
-	color: rgba(0, 0, 0, 0.5);
-}
-
-#testimonial-item-1-name {
-	width: 100%;
-	gap: 20px;
-	align-items: center;
-}
-
-#main-text {
-	justify-content: space-between;
-}
-
-#pricing-link {
-	max-width: 1200px;
-	display: flex;
-	flex-direction: column;
-}
-
-#testimonial-item-2-row {
-	justify-content: center;
-	padding-top: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-	padding-bottom: 80px;
-}
-
-#recipes-button {
-	flex-direction: column;
-}
-
-#newsletter-column {
-	display: block;
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
-
-#refund-link {
-	align-self: center;
-}
-
-#testimonial-item-2-description {
-	padding: 10px;
-	text-align: center;
-	font-size: 0.8rem;
-	margin-top: 20px;
-	opacity: 75%;
-}
-
-#newsletter-row {
-	display: block;
-}
-
-#studies-icon {
-	display: block;
-}
-
-#newsletter-text {
-	display: block;
-}
-
-#calorie-calculator-heading {
-	display: flex;
-	gap: 30px;
-	flex: 0 1 auto;
-	justify-content: center;
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-#contact-link {
-	display: block;
-}
-
-.gjs-button {
-	vertical-align: top;
-	max-width: 100%;
-	display: inline-block;
-	text-decoration: none;
+.login-container button {
+	background-color: #2e558f;
 	color: white;
-	padding-right: 15px;
-	padding-bottom: 10px;
-	padding-left: 15px;
-	background-color: rgb(36, 99, 235);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-	border-bottom-right-radius: 5px;
-	border-bottom-left-radius: 5px;
-	padding-top: 10px;
-	font-size: 1.1rem;
-	text-align: center;
-}
-
-.gjs-text-blue {
-	color: rgb(36, 99, 235);
-}
-
-#testimonial-item-1-row {
-	font-size: 2.5rem;
-}
-
-#recipes-heading {
-	padding: 10px;
-	max-width: 750px;
-	margin-bottom: 35px;
-	padding-left: 0px;
-	padding-right: 0px;
-	text-align: center;
-	margin-top: 35px;
-}
-
-#newsletter-subheading {
-	max-width: 1200px;
-	align-items: center;
-	display: flex;
-	flex-direction: column;
-	padding-top: 50px;
-	padding-right: 50px;
-	padding-bottom: 50px;
-	padding-left: 50px;
-	border-top-left-radius: 50px;
-	border-top-right-radius: 50px;
-	border-bottom-right-radius: 50px;
-	border-bottom-left-radius: 50px;
-	border-top-width: 1px;
-	border-right-width: 1px;
-	border-bottom-width: 1px;
-	border-left-width: 1px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: rgba(0, 0, 0, 0.06);
-	border-right-color: rgba(0, 0, 0, 0.06);
-	border-bottom-color: rgba(0, 0, 0, 0.06);
-	border-left-color: rgba(0, 0, 0, 0.06);
-	background-image: radial-gradient(515px at 50% 141%, rgba(35, 98, 235, 0.22) 10%, white 90%);
-	background-position: 0px 0px;
-	background-size: 100% 100%;
-	background-repeat: repeat;
-	background-attachment: scroll;
-	background-origin: padding-box;
-	box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
-}
-
-#training-plan-heading {
-	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.gjs-link:hover {
-	color: rgb(36, 99, 235);
-	text-decoration: underline;
-}
-
-.gjs-icon {
-	display: inline-block;
+	padding: 10px 20px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
 	text-decoration: none;
-	color: inherit;
-	vertical-align: middle;
-	fill: currentColor;
-	width: 50px;
-	height: 50px;
+	width: 100%;
 }
 
-#testimonial-item-1-description {
-	width: 196px;
-	height: 41px;
-}
-
-#studies-heading {
-	width: 213px;
-	height: 44px;
-}
-
-#nav-row {
-	font-size: 1.2rem;
-	margin-bottom: 15px;
-}
-
-.gjs-icon.gjs-feature-icon {
-	padding-top: 10px;
-	padding-right: 10px;
-	padding-bottom: 10px;
-	padding-left: 10px;
-	background-color: rgb(36, 99, 235);
-	color: white;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
-}
-
-#more-features-subheading {
-	font-size: 1.5rem;
-}
-
-#training-plan-text {
-	padding: 10px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#main-content-column {
-	font-size: 1.5rem;
-}
-
-#main-heading {
-	padding: 10px;
-	padding-left: 0px;
-	padding-right: 0px;
-}
-
-#footer-logo-column {
-	font-size: 2.5rem;
+/* footer */
+footer {
 	text-align: center;
-}
-
-#recipes-link {
-	padding: 10px;
-	font-family: Arial, Helvetica, sans-serif;
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-@media (max-width:992px) {
-	.gjs-grid-row {
-		flex-direction: column;
-	}
-
-	#calorie-calculator-text {
-		flex-direction: row;
-	}
-
-	#ish0zj {
-		flex-direction: row;
-	}
-
-	#training-plan-column {
-		flex-direction: row;
-	}
-
-	#testimonial-item-1-text-column {
-		flex-direction: row;
-	}
-}
-
-@media (max-width:768px) {
-	#more-features-text {
-		display: none;
-	}
-}
-
-@media (max-width:480px) {
-	#irfl3k {
-		width: 116px;
-		height: 24px;
-	}
+	border-top: 1px solid #ccc;
+	background-color: #ccc;
 }

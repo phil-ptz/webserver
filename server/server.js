@@ -47,8 +47,8 @@ app.get("/", (request, response) => {
 app.get("/login", (request, response) => {
     response.render("login.html");
 });
-app.get("/registration", (request, response) => {
-    response.render("registration.html");
+app.get("/register", (request, response) => {
+    response.render("register.html");
 });
 
 app.post("/", (request, response) => {

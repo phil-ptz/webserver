@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 
-
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FitGuide-Login</title>
+    <title>FitGuide-Registrierung</title>
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
   </head>
-
 
   <body>
 
     <header>
       <nav class="navbar">
-        <div class="navbar-title">Login</div>
+        <div class="navbar-title">Registrierung</div>
         <ul class="navbar-links">
             <li><a href="/">Home</a></li>
             <li><a href="/">Kalorienrechner</a></li>
@@ -28,15 +26,19 @@
 
       <div class="login-container">
 
-        <h2>Anmeldung</h2>
+        <h2>Registrierung</h2>
         
-        <form action="/login" method="POST">
-          <input type="text" name="username" placeholder="Benutzername" required>
+        <form action="/register" method="POST">
+          <input type="email" name="username" placeholder="E-Mail-Adresse" required>
           <input type="password" name="password" placeholder="Passwort" required>
-          <button type="submit">Login</button>
+          <input type="password" name="confirm_password" placeholder="Passwort bestätigen" required>
+          <button type="submit">Registrieren</button>
         </form>
 
       </div>
+
+      <p>Haben Sie bereits einen Account?</p>
+      <a href="/login">Hier Anmelden</a>
 
     </main>
 
