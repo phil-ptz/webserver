@@ -53,14 +53,16 @@ function getUser (user, callback) {
         dataObject = JSON.parse(data);
         userObject = JSON.parse(user);
 
+        let found = false;
         for (const savedUser of dataObject) {
             if (savedUser["username"] == userObject["username"] && savedUser["password"] == userObject["password"]) {
-                return callback(null, true);
+                found = true;
             }
         }
+
+        callback(null, found);
     });
 
-    return callback(null, true);
 }
 
 // get routes
