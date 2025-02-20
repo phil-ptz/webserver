@@ -29,7 +29,7 @@
 
         <h2>Registrierung</h2>
         
-        <form action="/register" method="POST" id="register-form" onsubmit="submitForm()">
+        <form action="/register" method="POST" id="register-form" onsubmit="submitForm(event);">
           <input type="email" name="username" placeholder="E-Mail-Adresse" required>
           <input type="password" name="password" placeholder="Passwort" id="password-input" required>
           <input type="password" name="confirm_password" placeholder="Passwort bestätigen" id="confirm-password-input" required>

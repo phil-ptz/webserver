@@ -1,11 +1,13 @@
-function submitForm(event) {
+function submitForm() {
     var passwordInput = document.getElementById("password-input");
     var confirmPasswordInput = document.getElementById("confirm-password-input");
     var form = document.getElementById("register-form")
 
     if (passwordInput.value != confirmPasswordInput.value) {
-        event.preventDefault();
-        window.alert("no password match");
+        event.preventDefault(); 
+        window.alert("Passwörter stimmen nicht überein.");
         return false;
     }
+
+    return true;
   }
