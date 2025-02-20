@@ -27,6 +27,7 @@ function pushUser (user) {
         }
         dataObject = JSON.parse(data);
         userObject = JSON.parse(user);
+        delete userObject["confirm_password"]
         dataObject.push(userObject);
         fs.writeFile(dbPath, JSON.stringify(dataObject), (error) => {
         if (error) {
@@ -38,6 +39,28 @@ function pushUser (user) {
         }
     });
     })
+}
+
+function getUser (user, callback) {
+
+    fs.readFile(dbPath, "utf8", (error, data) => {
+        if (error) {
+            console.log("Fehler beim laden der Datenbank.");
+            console.log(error);
+            return callback(error);
+        }
+
+        dataObject = JSON.parse(data);
+        userObject = JSON.parse(user);
+
+        for (const savedUser of dataObject) {
+            if (savedUser["username"] == userObject["username"] && savedUser["password"] == userObject["password"]) {
+                return callback(null, true);
+            }
+        }
+    });
+
+    return callback(null, true);
 }
 
 // get routes
@@ -55,8 +78,17 @@ app.get("/register", (request, response) => {
 app.post("/", (request, response) => {
     response.render("404.html");
 });
-app.get("/login", (request, response) => {
-    response.render("404.html");
+app.post("/login", (request, response) => {
+    var body = JSON.stringify(request.body);
+    getUser(body, (error, result) => {
+        if (error == null) {
+            if (result) {
+                response.send("Sie sind angemeldet.");
+            } else {
+                response.send("Falsche Zugangsdaten.")
+            }
+        }
+    });
 });
 app.post("/register", (request, response) => {
    var body = JSON.stringify(request.body);
