@@ -14,7 +14,7 @@ app.engine('html', require('ejs').renderFile);
 
 // constants
 const port = 5500;
-const dbPath = "../database/user_information.json";
+const dbPath = "database/user_information.json";
 
 // functions
 function pushUser (user) {
@@ -40,7 +40,7 @@ function pushUser (user) {
     })
 }
 
-// routes
+// get routes
 app.get("/", (request, response) => {
     response.render("index.html");
 });
@@ -51,10 +51,14 @@ app.get("/register", (request, response) => {
     response.render("register.html");
 });
 
+// post routes
 app.post("/", (request, response) => {
-    response.render("index.html");
+    response.render("404.html");
 });
-app.post("/login", (request, response) => {
+app.get("/login", (request, response) => {
+    response.render("404.html");
+});
+app.post("/register", (request, response) => {
    var body = JSON.stringify(request.body);
    var error = pushUser(body);
    if (error == null) {

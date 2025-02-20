@@ -7,6 +7,7 @@
     <title>FitGuide-Registrierung</title>
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
+    <script src="/script/register.js"></script>
   </head>
 
   <body>
@@ -28,10 +29,10 @@
 
         <h2>Registrierung</h2>
         
-        <form action="/register" method="POST">
+        <form action="/register" method="POST" id="register-form" onsubmit="submitForm()">
           <input type="email" name="username" placeholder="E-Mail-Adresse" required>
-          <input type="password" name="password" placeholder="Passwort" required>
-          <input type="password" name="confirm_password" placeholder="Passwort bestätigen" required>
+          <input type="password" name="password" placeholder="Passwort" id="password-input" required>
+          <input type="password" name="confirm_password" placeholder="Passwort bestätigen" id="confirm-password-input" required>
           <button type="submit">Registrieren</button>
         </form>
 
