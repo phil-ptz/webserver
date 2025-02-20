@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <script src="/script/calorie.js"></script>
   </head>
 
   <body>
@@ -15,7 +16,7 @@
         <div class="navbar-title">Home</div>
         <ul class="navbar-links">
             <li><a href="/">Home</a></li>
-            <li><a href="/">Kalorienrechner</a></li>
+            <li><a href="/calorie">Kalorienrechner</a></li>
             <li><a href="/">Ernährungsplan</a></li>
             <li><div class="login-button" onclick="window.location='/register';">Anmeldung</div></li>
         </ul>
@@ -53,31 +54,6 @@
         <div id="result"></div>
     </section>
 
-    <script>
-        function calculateCalories() {
-            const age = document.getElementById('age').value;
-            const height = document.getElementById('height').value;
-            const weight = document.getElementById('weight').value;
-            const gender = document.getElementById('gender').value;
-            const goal = document.getElementById('goal').value;
-
-            let bmr;
-            if (gender === 'male') {
-                bmr = 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
-            } else {
-                bmr = 447.593 + (9.247 * weight) + (3.098 * height) - (4.330 * age);
-            }
-
-            let calories;
-            if (goal === 'lose') {
-                calories = bmr - 500;
-            } else {
-                calories = bmr + 500;
-            }
-
-            document.getElementById('result').innerText = `Your daily calorie intake should be: ${calories.toFixed(2)} calories.`;
-        }
-    </script>
     </main>
 
     <footer>

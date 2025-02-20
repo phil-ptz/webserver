@@ -78,6 +78,9 @@ app.get("/calories.html", (request, response) => {
 app.get("/register", (request, response) => {
     response.render("register.html");
 });
+app.get("/calorie", (request, response) => {
+    response.render("calorie.html");
+});
 
 // post routes
 app.post("/", (request, response) => {
