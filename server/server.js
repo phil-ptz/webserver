@@ -47,6 +47,9 @@ app.get("/", (request, response) => {
 app.get("/login", (request, response) => {
     response.render("login.html");
 });
+app.get("/calories.html", (request, response) => {
+    response.render("calorie.html");
+});
 app.get("/register", (request, response) => {
     response.render("register.html");
 });
@@ -56,6 +59,9 @@ app.post("/", (request, response) => {
     response.render("404.html");
 });
 app.get("/login", (request, response) => {
+    response.render("404.html");
+});
+app.get("/calorie", (request, response) => {
     response.render("404.html");
 });
 app.post("/register", (request, response) => {
