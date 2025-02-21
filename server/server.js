@@ -75,8 +75,8 @@ app.get("/login", (request, response) => {
 app.get("/register", (request, response) => {
     response.render("register.html");
 });
-app.get("/calorie", (request, response) => {
-    response.render("calorie.html");
+app.get("/calculator", (request, response) => {
+    response.render("calculator.html");
 });
 app.get("/training", (request, response) => {
     response.render("trainingsplan.html");
@@ -98,7 +98,7 @@ app.post("/login", (request, response) => {
         }
     });
 });
-app.get("/calorie", (request, response) => {
+app.get("/calculator", (request, response) => {
     response.render("404.html");
 });
 app.get("/training", (request, response) => {
