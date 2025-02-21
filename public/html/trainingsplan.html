@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trainingsplan</title>
+    <link rel="stylesheet" href="../css/trainingsplan.css">
+</head>
+<body>
+<div class="container">
+    <h1>Trainingsplan erstellen</h1>
+    <div class="selection-grid">
+        <!-- Linke Spalte: Körperbereich -->
+        <div class="column">
+            <h2>Körperbereich</h2>
+            <label>
+                <input type="radio" name="category" value="Ganzkörper" checked> Ganzkörper
+            </label>
+            <label>
+                <input type="radio" name="category" value="Oberkörper"> Oberkörper
+            </label>
+            <label>
+                <input type="radio" name="category" value="Unterkörper"> Unterkörper
+            </label>
+        </div>
+
+        <!-- Mittlere Spalte: Muskelgruppen -->
+        <div class="column">
+            <h2>Muskelgruppen</h2>
+            <label>
+                <input type="radio" name="category" value="Schultermuskulatur"> Schultermuskulatur
+            </label>
+            <label>
+                <input type="radio" name="category" value="Brustmuskulatur"> Brustmuskulatur
+            </label>
+            <label>
+                <input type="radio" name="category" value="Armmuskulatur"> Armmuskulatur
+            </label>
+            <label>
+                <input type="radio" name="category" value="Bauchmuskulatur"> Bauchmuskulatur
+            </label>
+            <label>
+                <input type="radio" name="category" value="Rückenmuskulatur"> Rückenmuskulatur
+            </label>
+            <label>
+                <input type="radio" name="category" value="Beinmuskulatur"> Beinmuskulatur
+            </label>
+        </div>
+
+        <!-- Rechte Spalte: Trainingsart -->
+        <div class="column">
+            <h2>Trainingsart</h2>
+            <label>
+                <input type="radio" name="category" value="Push"> Push (Brust, Schulter, Trizeps)
+            </label>
+            <label>
+                <input type="radio" name="category" value="Pull"> Pull (Rücken, Bizeps, hintere Schulter)
+            </label>
+            <label>
+                <input type="radio" name="category" value="Legs"> Legs (Beinmuskulatur)
+            </label>
+        </div>
+    </div>
+
+    <!-- Separierte Spalte: Trainingsort -->
+    <div class="location-column">
+        <h2>Trainingsort</h2>
+        <label>
+            <input type="radio" name="location" value="Fitnessstudio" checked> Fitnessstudio
+        </label>
+        <label>
+            <input type="radio" name="location" value="Zuhause_mit_Gewichten"> Zuhause mit Gewichten
+        </label>
+        <label>
+            <input type="radio" name="location" value="Zuhause_ohne_Gewichte"> Zuhause ohne Gewichte
+        </label>
+    </div>
+
+    <button id="showVideos">Videos anzeigen</button>
+    <div id="videoContainer"></div>
+</div>
+<script src="../server/trainingsplan.js"></script>
+</body>
+</html>
