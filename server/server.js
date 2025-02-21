@@ -78,6 +78,9 @@ app.get("/register", (request, response) => {
 app.get("/calorie", (request, response) => {
     response.render("calorie.html");
 });
+app.get("/training", (request, response) => {
+    response.render("trainingsplan.html");
+});
 
 // post routes
 app.post("/", (request, response) => {
@@ -96,6 +99,9 @@ app.post("/login", (request, response) => {
     });
 });
 app.get("/calorie", (request, response) => {
+    response.render("404.html");
+});
+app.get("/training", (request, response) => {
     response.render("404.html");
 });
 app.post("/register", (request, response) => {
