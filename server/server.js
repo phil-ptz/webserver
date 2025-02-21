@@ -81,6 +81,9 @@ app.get("/calculator", (request, response) => {
 app.get("/training", (request, response) => {
     response.render("trainingsplan.html");
 });
+app.get("/impressum", (request, response) => {
+    response.render("impressum.html");
+});
 
 // post routes
 app.post("/", (request, response) => {
@@ -99,6 +102,9 @@ app.post("/login", (request, response) => {
     });
 });
 app.get("/calculator", (request, response) => {
+    response.render("404.html");
+});
+app.get("/impressum", (request, response) => {
     response.render("404.html");
 });
 app.get("/training", (request, response) => {
