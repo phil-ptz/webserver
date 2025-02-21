@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>FitGuide</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
@@ -10,74 +10,91 @@
   </head>
 
   <body>
-
     <header>
       <nav class="navbar">
         <div class="navbar-title">Home</div>
         <ul class="navbar-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/calculator">Rechner</a></li>
-            <li><a href="/training">Trainingsplan</a></li>
-            <li><div class="login-button" onclick="window.location='/register';">Anmeldung</div></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/calculator">Rechner</a></li>
+          <li><a href="/training">Trainingsplan</a></li>
+          <li>
+            <div class="login-button" onclick="window.location='/register';">
+              Anmeldung
+            </div>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
-    <!--  Kalorienrechner -->
-    <section class="calorie-calculator">
-        <h2>Kalorienbedarf</h2>
-        <form id="calorie-form">
-            <label for="age">Alter:</label>
-            <input type="number" id="age" name="age" required>
-            
-            <label for="height">Größe (cm):</label>
-            <input type="number" id="height" name="height" required>
-            
-            <label for="weight">Gewicht (kg):</label>
-            <input type="number" id="weight" name="weight" required>
-            
-            <label for="gender">Geschlecht:</label>
-            <select id="gender" name="gender" required>
-                <option value="male">Männlich</option>
-                <option value="female">Weiblich</option>
-            </select>
-            
-            <label for="goal">Ziel:</label>
-            <select id="goal" name="goal" required>
-                <option value="lose">Gewicht verlieren</option>
-                <option value="gain">Gewicht zunehmen</option>
-            </select>
-            
-            <button type="button" onclick="calculateCalories()">Rechnen</button>
-        </form>
-        
-        <div id="calories-result"></div>
-    </section>
-    
+      <div class="container">
+        <div class="selection-grid">
+          <div class="column">
+            <!--  Kalorienrechner -->
+            <section class="calorie-calculator">
+              <h2>Kalorienbedarf</h2>
+              <form id="calorie-form">
+                <label for="age">Alter:</label>
+                <input type="number" id="age" name="age" required />
 
+                <label for="height">Größe (cm):</label>
+                <input type="number" id="height" name="height" required />
 
-    <!--  BMI Rechner -->
-    <section class="bmi-calculator">
-      <form id="bmi-form">
-        <h2>BMI-Rechner</h2>
-        <label for="bmi-height">Größe (cm):</label>
-        <input type="number" id="bmi-height" name="bmi-height" required>
-        
-        <label for="bmi-weight">Gewicht (kg):</label>
-        <input type="number" id="bmi-weight" name="bmi-weight" required>
-        
-        <button type="button" onclick="calculateBMI()">Rechnen</button>
-      </form>
-      <div id="bmi-result"></div>
-    </section>
+                <label for="weight">Gewicht (kg):</label>
+                <input type="number" id="weight" name="weight" required />
 
+                <label for="gender">Geschlecht:</label>
+                <select id="gender" name="gender" required>
+                  <option value="male">Männlich</option>
+                  <option value="female">Weiblich</option>
+                </select>
+
+                <label for="goal">Ziel:</label>
+                <select id="goal" name="goal" required>
+                  <option value="lose">Gewicht verlieren</option>
+                  <option value="gain">Gewicht zunehmen</option>
+                </select>
+
+                <button type="button" onclick="calculateCalories()">
+                  Rechnen
+                </button>
+              </form>
+
+              <div id="calories-result"></div>
+            </section>
+          </div>
+          <div class="column">
+            <!--  BMI Rechner -->
+            <section class="bmi-calculator">
+              <form id="bmi-form">
+                <h2>BMI-Rechner</h2>
+                <label for="bmi-height">Größe (cm):</label>
+                <input
+                  type="number"
+                  id="bmi-height"
+                  name="bmi-height"
+                  required
+                />
+
+                <label for="bmi-weight">Gewicht (kg):</label>
+                <input
+                  type="number"
+                  id="bmi-weight"
+                  name="bmi-weight"
+                  required
+                />
+
+                <button type="button" onclick="calculateBMI()">Rechnen</button>
+              </form>
+              <div id="bmi-result"></div>
+            </section>
+          </div>
+        </div>
+      </div>
     </main>
 
     <footer>
       <p>&copy; 2025 FitGuide</p>
     </footer>
-    
   </body>
 </html>
-
