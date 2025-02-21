@@ -19,7 +19,16 @@ function calculateCalories() {
         calories = bmr + 500;
     }
 
-    document.getElementById('result').innerText = `Your daily calorie intake should be: ${calories.toFixed(2)} calories.`;
+    document.getElementById('result').innerText = `Du solltest täglich ${calories.toFixed(2)} Kalorien zu dir nehmen.`;
+}
+
+function calculateBMI() {
+    const height = document.getElementById('height').value / 100;
+    const weight = document.getElementById('weight').value;
+
+    const bmi = weight / (height * height);
+
+    document.getElementById('bmi-result').innerText = `Dein BMI beträgt: ${bmi.toFixed(2)}`;
 }
 
 function submitForm() {
@@ -34,4 +43,4 @@ function submitForm() {
     }
 
     return true;
-  }
+}
