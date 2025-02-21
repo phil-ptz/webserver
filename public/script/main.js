@@ -19,12 +19,12 @@ function calculateCalories() {
         calories = bmr + 500;
     }
 
-    document.getElementById('result').innerText = `Du solltest täglich ${calories.toFixed(2)} Kalorien zu dir nehmen.`;
+    document.getElementById('calories-result').innerText = `Du solltest täglich ${calories.toFixed(2)} Kalorien zu dir nehmen.`;
 }
 
 function calculateBMI() {
-    const height = document.getElementById('height').value / 100;
-    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('bmi-height').value / 100;
+    const weight = document.getElementById('bmi-weight').value;
 
     const bmi = weight / (height * height);
 
