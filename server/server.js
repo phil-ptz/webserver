@@ -118,6 +118,7 @@ app.get("/profile", (request, response) => {
     response.render("profile.html");
 });
 app.get("/check-login", (request, response) => {
+    console.log(request.session, request.session.user)
     if (request.session.user) {
         response.json({ loggedIn: true, username: request.session.user.username });
     } else {
