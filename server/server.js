@@ -93,7 +93,7 @@ app.get("/logout", (request, response) => {
         if (err) {
             return response.status(500).send("Fehler beim Logout.");
         }
-        response.redirect("/login");
+        response.send('<script>alert("Sie wurden ausgeloggt."); window.location.href="/login";</script>');
     });
 });
 app.get("/calculator", (request, response) => {
