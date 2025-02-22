@@ -1,3 +1,18 @@
+document.addEventListener("DOMContentLoaded", function () {
+  // check if user is logged => change navbar accordingly
+  fetch("/check-login")
+      .then(res => res.json())
+      .then(data => {
+          document.querySelectorAll(".login-button").forEach(navUser => {
+              if (data.loggedIn) {
+                  navUser.innerHTML = `${data.username}`;
+                  navUser.onclick = function () {window.location = "/profile";};
+              }
+        });
+      })
+      .catch(error => console.error("Fehler beim Laden des Login-Status:", error));
+});
+
 function calculateCalories() {
   const age = document.getElementById("age").value;
   const height = document.getElementById("height").value;

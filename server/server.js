@@ -88,18 +88,41 @@ app.get("/login", (request, response) => {
 app.get("/register", (request, response) => {
     response.render("register.html");
 });
+app.get("/logout", (request, response) => {
+    request.session.destroy((err) => {
+        if (err) {
+            return response.status(500).send("Fehler beim Logout.");
+        }
+        response.redirect("/login");
+    });
+});
 app.get("/calculator", (request, response) => {
     if (!request.session.user) {
-        return response.status(403).send("Zugriff verweigert! Bitte einloggen.");
+        return response.status(403).render("denied.html");
     }
-
     response.render("calculator.html");
 });
 app.get("/training", (request, response) => {
+    if (!request.session.user) {
+        return response.status(403).render("denied.html");
+    }
     response.render("trainingsplan.html");
 });
 app.get("/impressum", (request, response) => {
     response.render("impressum.html");
+});
+app.get("/profile", (request, response) => {
+    if (!request.session.user) {
+        return response.status(403).render("denied.html");
+    }
+    response.render("profile.html");
+});
+app.get("/check-login", (request, response) => {
+    if (request.session.user) {
+        response.json({ loggedIn: true, username: request.session.user.username });
+    } else {
+        response.json({ loggedIn: false });
+    }
 });
 
 // post routes
@@ -113,7 +136,7 @@ app.post("/login", (request, response) => {
             if (user) {
                 request.session.user = { username: user.username };
                 //response.render("index.html")
-                response.send('<script>alert("Erfolgreich eingeloggt!"); window.location.href="/";</script>');
+                response.send('<script>alert("Erfolgreich eingeloggt."); window.location.href="/";</script>');
             } else {
                 response.status(401).send("Falsche Zugangsdaten.");
             }
@@ -126,7 +149,7 @@ app.post("/register", (request, response) => {
    var body = JSON.stringify(request.body);
    var error = pushUser(body);
    if (error == null) {
-        response.send("Daten wurden gesendet.");
+        response.send('<script>alert("Sie wurden registriert, bitte melden Sie sich an."); window.location.href="/login";</script>');
    }
 });
 
