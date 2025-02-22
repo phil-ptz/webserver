@@ -13,7 +13,7 @@ app.set("views", __dirname + "/../public/html");
 app.engine('html', require('ejs').renderFile);
 
 // constants
-const port = 5500;
+const port = 3000;
 const dbPath = "database/user_information.json";
 
 // functions
