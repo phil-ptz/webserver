@@ -1,13 +1,23 @@
 // imports
 var bodyParser = require("body-parser");
 var fs = require("fs");
+var session = require("express-session");
 
 // initialize express
 const express = require("express");
 const app = express();
+app.use(session({
+    secret: "1234",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }
+}));
 
+// for parsing
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.json());       // to support JSON-encoded bodies
+app.use(express.json());
+
+// view paths
 app.use(express.static(__dirname + '/../public'));
 app.set("views", __dirname + "/../public/html");
 app.engine('html', require('ejs').renderFile);
@@ -17,6 +27,8 @@ const port = 3000;
 const dbPath = "database/user_information.json";
 
 // functions
+
+// adds user to db
 function pushUser (user) {
 
     fs.readFile(dbPath, "utf8", (error, data) => {
@@ -41,6 +53,7 @@ function pushUser (user) {
     })
 }
 
+// check if user is in db
 function getUser (user, callback) {
 
     fs.readFile(dbPath, "utf8", (error, data) => {
@@ -53,10 +66,10 @@ function getUser (user, callback) {
         dataObject = JSON.parse(data);
         userObject = JSON.parse(user);
 
-        let found = false;
+        let found = null;
         for (const savedUser of dataObject) {
             if (savedUser["username"] == userObject["username"] && savedUser["password"] == userObject["password"]) {
-                found = true;
+                found = savedUser;
             }
         }
 
@@ -76,6 +89,10 @@ app.get("/register", (request, response) => {
     response.render("register.html");
 });
 app.get("/calculator", (request, response) => {
+    if (!request.session.user) {
+        return response.status(403).send("Zugriff verweigert! Bitte einloggen.");
+    }
+
     response.render("calculator.html");
 });
 app.get("/training", (request, response) => {
@@ -91,24 +108,19 @@ app.post("/", (request, response) => {
 });
 app.post("/login", (request, response) => {
     var body = JSON.stringify(request.body);
-    getUser(body, (error, result) => {
+    getUser(body, (error, user) => {
         if (error == null) {
-            if (result) {
-                response.send("Sie sind angemeldet.");
+            if (user) {
+                request.session.user = { username: user.username };
+                //response.render("index.html")
+                response.send('<script>alert("Erfolgreich eingeloggt!"); window.location.href="/";</script>');
             } else {
-                response.send("Falsche Zugangsdaten.")
+                response.status(401).send("Falsche Zugangsdaten.");
             }
+        } else {
+            return response.status(500).send("Fehler beim Verarbeiten der Anfrage.");
         }
     });
-});
-app.get("/calculator", (request, response) => {
-    response.render("404.html");
-});
-app.get("/impressum", (request, response) => {
-    response.render("404.html");
-});
-app.get("/training", (request, response) => {
-    response.render("404.html");
 });
 app.post("/register", (request, response) => {
    var body = JSON.stringify(request.body);
