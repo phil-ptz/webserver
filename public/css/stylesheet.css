@@ -1,72 +1,81 @@
 /* Allgemeine Stile */
 * {
-    box-sizing: border-box; /* Padding und Border in der Breite enthalten */
-    font-family: Arial, Helvetica, sans-serif; /* Standard-Schriftart */
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background-color: #f4f4f4; /* Hintergrundfarbe */
+    background-color: #f4f4f4;
     display: flex;
-    flex-direction: column; /* Layout als Spalte */
+    flex-direction: column;
     margin: 0;
-    height: 100vh; /* Volle Höhe des Viewports */
+    height: 100vh;
+    overflow-x: hidden;
 }
 
 main {
     display: flex;
-    justify-content: center; /* Zentriert den Inhalt horizontal */
-    align-items: center; /* Zentriert den Inhalt vertikal */
-    flex: 1; /* Füllt den verfügbaren Platz aus */
-    flex-direction: column; /* Layout als Spalte */
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    flex-direction: column;
 }
 
-h1 {
-    text-align: center; /* Zentriert Überschriften */
+h1, .reviews-title {
+    text-align: center;
 }
 
 label {
-    display: block; /* Labels als Blockelement */
-    margin: 10px 0; /* Abstand oben und unten */
+    display: block;
+    margin: 10px 0;
 }
 
 button {
     display: block;
-    width: 100%; /* Volle Breite – global gesetzt */
+    width: 100%;
     padding: 10px;
-    background-color: #0056b3; /* Button-Hintergrundfarbe */
-    color: white; /* Button-Textfarbe */
+    background-color: #0056b3;
+    color: white;
     border: none;
-    border-radius: 5px; /* Abgerundete Ecken */
-    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
-    font-size: 1.1em; /* Schriftgröße */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
 }
 
 button:hover {
-    background-color: #004080; /* Dunklere Farbe beim Hover */
+    background-color: #004080;
 }
 
 /* Navbar */
-header {
-    text-align: left;
-    margin: 0;
-}
-
 .navbar {
     display: flex;
-    justify-content: space-between; /* Platz zwischen Titel und Links */
+    justify-content: space-between;
     align-items: center;
-    background-color: #2e558f; /* Navbar-Hintergrundfarbe */
-    color: white; /* Navbar-Textfarbe */
+    background-color: #2e558f;
+    color: white;
     padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .navbar-title {
     font-size: 34px;
-    font-weight: bold; /* Fetter Titel */
+    font-weight: bold;
 }
 
 .navbar-links {
-    list-style: none; /* Entfernt Aufzählungszeichen */
+    list-style: none;
     margin: 0;
     padding: 0;
     display: flex;
@@ -74,216 +83,219 @@ header {
 }
 
 .navbar-links li {
-    margin-left: 20px; /* Abstand zwischen Links */
+    margin-left: 20px;
 }
 
 .navbar-links a {
-    text-decoration: none; /* Entfernt Unterstreichung */
-    color: white; /* Link-Textfarbe */
+    text-decoration: none;
+    color: white;
     font-size: 18px;
 }
 
-.login-button {
-    background-color: white; /* Hintergrundfarbe des Login-Buttons */
-    color: black; /* Textfarbe des Login-Buttons */
-    border-radius: 2px; /* Leicht abgerundete Ecken */
-    padding: 7px 10px;
-    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
+.navbar-links a:hover {
+    color: #ffcc00;
 }
 
-.navbar-links a:hover {
-    color: #ffcc00; /* Gelbe Farbe beim Hover über Links */
+.login-button {
+    background-color: white;
+    color: black;
+    border-radius: 2px;
+    padding: 7px 10px;
+    cursor: pointer;
 }
 
 /* Footer */
 footer {
     text-align: center;
-    border-top: 1px solid #ccc; /* Obere Rahmenlinie */
-    background-color: #ccc; /* Hintergrundfarbe */
+    border-top: 1px solid #ccc;
+    background-color: #ccc;
     padding: 10px 0;
 }
 
-/* Trainingsplan-Seite */
+/* Container */
 .container {
     max-width: 1200px;
-    max-height: calc(100vh - 150px); /* Begrenzt die Höhe */
-    overflow-y: auto; /* Scrollbar bei Bedarf */
-    margin: 20px auto; /* Zentriert den Container */
+    max-height: calc(100vh - 150px);
+    overflow-y: auto;
+    margin: 20px auto;
     background: white;
     padding: 20px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .selection-grid {
     display: flex;
-    gap: 20px; /* Abstand zwischen den Spalten */
+    gap: 20px;
     margin-bottom: 20px;
 }
 
-.column {
-    flex: 1; /* Gleiche Breite für alle Spalten */
-    border: 1px solid #ddd; /* Rahmen */
+.column, .location-column {
+    flex: 1;
+    border: 1px solid #ddd;
     padding: 10px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    background-color: #f9f9f9; /* Hintergrundfarbe */
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
 .column h2 {
-    margin-top: 0; /* Entfernt den oberen Abstand */
-    font-size: 1.2em; /* Schriftgröße */
-    color: #333; /* Textfarbe */
-}
-
-.location-column {
-    border: 1px solid #ddd; /* Rahmen */
-    padding: 10px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    background-color: #f9f9f9; /* Hintergrundfarbe */
-    margin-bottom: 20px;
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #333;
 }
 
 #videoContainer {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
-    gap: 20px; /* Abstand zwischen den Videos */
-    padding-bottom: 20px; /* Abstand zum Footer */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding-bottom: 20px;
 }
 
 iframe {
-    width: 100%; /* Volle Breite */
-    height: 315px; /* Feste Höhe */
-    border: none; /* Entfernt den Rahmen */
-    border-radius: 8px; /* Abgerundete Ecken */
+    width: 100%;
+    height: 315px;
+    border: none;
+    border-radius: 8px;
 }
 
-/* Index-Seite */
-/* Hero-Bild */
+/* Start-Section */
 #start-section {
-    background-image: url(/media/img/start.jpg);
-    background-color: #222; /* Fallback-Hintergrundfarbe */
+    background: url(/media/img/start.jpg) center/cover no-repeat;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     display: flex;
-    text-align: center;
     justify-content: center;
     align-items: center;
-    color: white; /* Textfarbe */
-    font-size: larger; /* Größere Schrift */
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: larger;
 }
 
-/* Beschreibung und Button in der Info-Sektion */
+#start-section div {
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 20%;
+    height: 40%;
+}
+
+#start-section img {
+    margin: 50px;
+}
+
+/* Info-Section */
 #info-section {
     text-align: center;
-    padding: 20px;
-    background-color: white; /* Hintergrundfarbe */
+    padding: 100px;
+    background-color: white;
+    width: 100%;
+    border-bottom: 2px solid black;
 }
 
-#info-section h2 {
-    margin-bottom: 20px; /* Abstand unter der Überschrift */
-}
-
-/* Elemente in der Info-Sektion nebeneinander anordnen */
 .info-content {
     display: flex;
-    flex-direction: row; /* Nebeneinander */
-    justify-content: center; /* Zentriert horizontal */
-    align-items: center; /* Zentriert vertikal */
-    gap: 40px; /* Abstand zwischen den Elementen */
-    margin-bottom: 20px; /* Abstand zum Angebotshinweis */
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 20px;
 }
 
 .description {
-    text-align: left; /* Linksbündig */
-    max-width: 500px; /* Maximale Breite der Beschreibung */
-    flex: 1; /* Nimmt verfügbaren Platz ein */
+    text-align: left;
+    max-width: 500px;
+    flex: 1;
 }
 
-/* Hier wird der Register-Button angepasst */
 .register-button {
-    flex: 0 0 auto; /* Beibehaltung der ursprünglichen Breite */
-    width: auto;     /* Überschreibt den globalen 100%-Wert */
+    flex: 0 0 auto;
+    width: auto;
 }
 
-/* Angebotshinweis */
+#review-section {
+    padding: 100px;
+    background-color: white;
+    width: 100%;
+}
+
 .offer-notice {
-    margin: 20px 0; /* Abstand oben und unten */
-    font-size: 1.2em; /* Größere Schrift */
-    color: #d9534f; /* Auffällige Farbe */
-}
-
-/* Überschrift für die Rezensionen */
-.reviews-title {
-    text-align: center;
     margin: 20px 0;
+    font-size: 1.2em;
+    color: #d9534f;
+    text-align: center;
 }
 
-/* Fake-Rezensionen */
 .reviews {
     display: flex;
-    justify-content: center; /* Zentriert die Rezensionen horizontal */
-    gap: 20px; /* Abstand zwischen den Rezensionen */
-    margin-top: 20px; /* Abstand zum Angebotshinweis */
-    flex-wrap: nowrap; /* Erzwingt eine Zeile – bei zu wenig Platz kann ein horizontaler Scroll entstehen */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: nowrap;
 }
 
 .review {
-    background-color: #f9f9f9; /* Hintergrundfarbe */
+    background-color: #f9f9f9;
     padding: 20px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-    width: 300px; /* Feste Breite */
-    text-align: center; /* Zentrierter Text */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
 }
 
 .review h3 {
-    margin: 0 0 10px; /* Abstand unter dem Namen */
-    font-size: 1.2em; /* Größere Schrift */
+    margin: 0 0 10px;
+    font-size: 1.2em;
 }
 
 .review p {
-    margin: 5px 0; /* Abstand zwischen den Absätzen */
+    margin: 5px 0;
 }
 
-/* Login-Seite */
+/* Login */
 .login-container {
-    background-color: white; /* Hintergrundfarbe */
+    background-color: white;
     padding: 30px;
-    border-radius: 8px; /* Abgerundete Ecken */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
-    width: 300px; /* Feste Breite */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 300px;
     text-align: center;
-    margin-bottom: 20px; /* Abstand zum darunterliegenden Text */
+    margin-bottom: 20px;
 }
 
 .login-container input {
-    width: 100%; /* Volle Breite */
+    width: 100%;
     padding: 10px;
-    margin: 10px 0; /* Abstand oben und unten */
-    border-radius: 5px; /* Abgerundete Ecken */
-    border: 1px solid #ccc; /* Rahmen */
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.login-container select {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    margin-top: 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 .login-container button {
-    background-color: #2e558f; /* Button-Hintergrundfarbe */
-    color: white; /* Button-Textfarbe */
+    background-color: #2e558f;
+    color: white;
     padding: 10px 20px;
     border: none;
-    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
-    border-radius: 5px; /* Abgerundete Ecken */
-    width: 100%; /* Volle Breite */
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
 }
 
-main p {
-    margin: 10px 0; /* Abstand zwischen den Textabschnitten */
+main p, main a {
+    margin: 10px 0;
 }
 
 main a {
-    color: #2e558f; /* Link-Textfarbe */
-    text-decoration: none; /* Entfernt Unterstreichung */
+    color: #2e558f;
+    text-decoration: none;
 }
 
 main a:hover {
-    text-decoration: underline; /* Unterstreichung beim Hover */
+    text-decoration: underline;
 }
