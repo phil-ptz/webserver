@@ -175,6 +175,12 @@ app.post("/register", (request, response) => {
 });
 
 
+// 404 Für alle anderen Routes
+app.get('*', function(request, response){
+    response.status(404).render('404.html');
+});
+
+
 
 // Express starten
 app.listen(port, () => {
