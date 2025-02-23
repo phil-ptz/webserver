@@ -1,239 +1,232 @@
-/* allgemein */
+/* Allgemeine Stile */
 * {
-	box-sizing: border-box;
-	font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box; /* Padding und Border in der Breite enthalten */
+    font-family: Arial, Helvetica, sans-serif; /* Standard-Schriftart */
 }
 
 body {
-    background-color: #f4f4f4;
-	display: flex;
-	flex-direction: column;
-	padding: 0;
-	margin: 0;
-	height: 100vh;
-}
-
-/* Flexibles Layout für den Hauptbereich */
-main {
-    flex: 1;
+    background-color: #f4f4f4; /* Hintergrundfarbe */
     display: flex;
-    justify-content: center;
-    align-items: flex-start; /* Oben ausrichten */
-    padding: 20px 0; /* Abstand zur Navbar und zum Footer */
-    overflow-y: auto; /* Scrollbar, falls der Inhalt zu lang ist */
+    flex-direction: column; /* Layout als Spalte */
+    margin: 0;
+    height: 100vh; /* Volle Höhe des Viewports */
 }
 
-
-main p {
-	padding: 0;
-	margin: 10px;
+main {
+    display: flex;
+    justify-content: center; /* Zentriert den Inhalt horizontal */
+    align-items: center; /* Zentriert den Inhalt vertikal */
+    flex: 1; /* Füllt den verfügbaren Platz aus */
+    flex-direction: column; /* Layout als Spalte */
 }
 
 h1 {
-    text-align: center;
+    text-align: center; /* Zentriert Überschriften */
 }
 
 label {
-    display: block;
-    margin: 10px 0;
+    display: block; /* Labels als Blockelement */
+    margin: 10px 0; /* Abstand oben und unten */
 }
 
 button {
     display: block;
-    width: 100%;
+    width: 100%; /* Volle Breite */
     padding: 10px;
-    background-color: #0056b3;
-    color: white;
+    background-color: #0056b3; /* Button-Hintergrundfarbe */
+    color: white; /* Button-Textfarbe */
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.1em;
+    border-radius: 5px; /* Abgerundete Ecken */
+    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
+    font-size: 1.1em; /* Schriftgröße */
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #004080; /* Dunklere Farbe beim Hover */
 }
 
-/* navbar leiste */
+/* Navbar */
 header {
-	text-align: left;
-	margin: 0;
+    text-align: left;
+    margin: 0;
 }
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Platz zwischen Titel und Links */
     align-items: center;
-    background-color: #2e558f;
-    color: white;
+    background-color: #2e558f; /* Navbar-Hintergrundfarbe */
+    color: white; /* Navbar-Textfarbe */
     padding: 10px 20px;
 }
 
 .navbar-title {
     font-size: 34px;
-    font-weight: bold;
+    font-weight: bold; /* Fetter Titel */
 }
 
 .navbar-links {
-    list-style: none;
+    list-style: none; /* Entfernt Aufzählungszeichen */
     margin: 0;
     padding: 0;
     display: flex;
-	align-items: center;
+    align-items: center;
 }
 
 .navbar-links li {
-    margin-left: 20px;
+    margin-left: 20px; /* Abstand zwischen Links */
 }
 
 .navbar-links a {
-    text-decoration: none;
-    color: white;
+    text-decoration: none; /* Entfernt Unterstreichung */
+    color: white; /* Link-Textfarbe */
     font-size: 18px;
 }
 
 .login-button {
-	background-color: white;
-	color: black;
-	border-radius: 2px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	text-align: center;
-	display: inline-block;
-	cursor: pointer;
-	padding: 7px 10px;
+    background-color: white; /* Hintergrundfarbe des Login-Buttons */
+    color: black; /* Textfarbe des Login-Buttons */
+    border-radius: 2px; /* Leicht abgerundete Ecken */
+    padding: 7px 10px;
+    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
 }
 
 .navbar-links a:hover {
-    color: #ffcc00;
+    color: #ffcc00; /* Gelbe Farbe beim Hover über Links */
 }
 
-/* anmeldungs- / registreirungs-container */
-
-.login-container {
-	background-color: white;
-	padding: 30px;
-	border-radius: 8px;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-	width: 300px;
-	height: 300px;
-	text-align: center;
-	justify-content: center;
-	height: auto;
-}
-
-.login-container input {
-	width: 100%;
-	padding: 10px;
-	margin: 10px 0;
-	border-radius: 5px;
-	border: 1px solid #ccc;
-}
-
-.login-container button {
-	background-color: #2e558f;
-	color: white;
-	padding: 10px 20px;
-	border: none;
-	cursor: pointer;
-	border-radius: 5px;
-	text-decoration: none;
-	width: 100%;
-}
-
-/* footer */
-/* Footer immer am unteren Rand */
+/* Footer */
 footer {
     text-align: center;
-    border-top: 1px solid #ccc;
-    background-color: #ccc;
+    border-top: 1px solid #ccc; /* Obere Rahmenlinie */
+    background-color: #ccc; /* Hintergrundfarbe */
     padding: 10px 0;
-    position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
-/*trainingsplan*/
-/* Trainingsplan-spezifische Anpassungen */
+/* Trainingsplan-Seite */
 .container {
     max-width: 1200px;
-    max-height: calc(100vh - 150px); /* Berücksichtigt Navbar und Footer */
-    overflow-y: auto; /* Scrollbar, falls der Inhalt zu lang ist */
-    margin: 20px auto; /* Abstand zur Navbar */
+    max-height: calc(100vh - 150px); /* Begrenzt die Höhe */
+    overflow-y: auto; /* Scrollbar bei Bedarf */
+    margin: 20px auto; /* Zentriert den Container */
     background: white;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
 }
 
 .selection-grid {
     display: flex;
-    gap: 20px;
+    gap: 20px; /* Abstand zwischen den Spalten */
     margin-bottom: 20px;
 }
 
 .column {
-    flex: 1;
-    border: 1px solid #ddd;
+    flex: 1; /* Gleiche Breite für alle Spalten */
+    border: 1px solid #ddd; /* Rahmen */
     padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    border-radius: 8px; /* Abgerundete Ecken */
+    background-color: #f9f9f9; /* Hintergrundfarbe */
 }
 
 .column h2 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #333;
+    margin-top: 0; /* Entfernt den oberen Abstand */
+    font-size: 1.2em; /* Schriftgröße */
+    color: #333; /* Textfarbe */
 }
 
 .location-column {
-    border: 1px solid #ddd;
+    border: 1px solid #ddd; /* Rahmen */
     padding: 10px;
-    border-radius: 8px;
-    background-color: #f9f9f9;
+    border-radius: 8px; /* Abgerundete Ecken */
+    background-color: #f9f9f9; /* Hintergrundfarbe */
     margin-bottom: 20px;
 }
 
-.location-column h2 {
-    margin-top: 0;
-    font-size: 1.2em;
-    color: #333;
-}
-
-/* Video-Container */
 #videoContainer {
     margin-top: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive Grid */
+    gap: 20px; /* Abstand zwischen den Videos */
     padding-bottom: 20px; /* Abstand zum Footer */
 }
 
 iframe {
-    width: 100%;
-    height: 315px;
-    border: none;
-    border-radius: 8px;
+    width: 100%; /* Volle Breite */
+    height: 315px; /* Feste Höhe */
+    border: none; /* Entfernt den Rahmen */
+    border-radius: 8px; /* Abgerundete Ecken */
 }
 
-/* index */
-
+/* Index-Seite */
 #start-section {
-    background-image: url(/media/img/start.jpg);
-    background-color: #222;
+    background-image: url(/media/img/start.jpg); /* Hintergrundbild */
+    background-color: #222; /* Fallback-Hintergrundfarbe */
     width: 100%;
     height: 100%;
     display: flex;
     text-align: center;
     justify-content: center;
     align-items: center;
-    color: white;
-    font-size: larger;
+    color: white; /* Textfarbe */
+    font-size: larger; /* Größere Schrift */
 }
 
 #info-section {
-    background-color: white;
+    text-align: center; /* Zentriert den Text */
+    padding: 20px;
+    background-color: white; /* Hintergrundfarbe */
+}
+
+#info-section h2 {
+    margin-bottom: 20px; /* Abstand unter der Überschrift */
 }
 
 #info-section div {
-    display: grid;
+    display: flex;
+    flex-direction: column; /* Layout als Spalte */
+    align-items: center; /* Zentriert die Punkte */
+    gap: 10px; /* Abstand zwischen den Punkten */
+}
+
+/* Login-Seite */
+.login-container {
+    background-color: white; /* Hintergrundfarbe */
+    padding: 30px;
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    width: 300px; /* Feste Breite */
+    text-align: center;
+    margin-bottom: 20px; /* Abstand zum darunterliegenden Text */
+}
+
+.login-container input {
+    width: 100%; /* Volle Breite */
+    padding: 10px;
+    margin: 10px 0; /* Abstand oben und unten */
+    border-radius: 5px; /* Abgerundete Ecken */
+    border: 1px solid #ccc; /* Rahmen */
+}
+
+.login-container button {
+    background-color: #2e558f; /* Button-Hintergrundfarbe */
+    color: white; /* Button-Textfarbe */
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer; /* Zeigt an, dass der Button klickbar ist */
+    border-radius: 5px; /* Abgerundete Ecken */
+    width: 100%; /* Volle Breite */
+}
+
+main p {
+    margin: 10px 0; /* Abstand zwischen den Textabschnitten */
+}
+
+main a {
+    color: #2e558f; /* Link-Textfarbe */
+    text-decoration: none; /* Entfernt Unterstreichung */
+}
+
+main a:hover {
+    text-decoration: underline; /* Unterstreichung beim Hover */
 }
