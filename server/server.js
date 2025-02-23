@@ -1,11 +1,18 @@
-// imports
+// Packages
+
+// body-parsser => POST-Requests verarbeiten
+// fs => Speichern / Laden der Datenbank
+// express-session => Speichern von Sessions in Cookies
 var bodyParser = require("body-parser");
 var fs = require("fs");
 var session = require("express-session");
 
-// initialize express
+// Express initialisieren
+// Express hilft beim Routing zu den verschiedenen Seiten
 const express = require("express");
 const app = express();
+
+// Initialisierung der Session von express-session
 app.use(session({
     secret: "1234",
     resave: false,
@@ -13,22 +20,24 @@ app.use(session({
     cookie: { secure: false }
 }));
 
-// for parsing
+// Für das Parsen der POST-Daten
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.json());
 
-// view paths
+// Pfad zu den Routes
 app.use(express.static(__dirname + '/../public'));
 app.set("views", __dirname + "/../public/html");
 app.engine('html', require('ejs').renderFile);
 
-// constants
-const port = 3000;
-const dbPath = "database/user_information.json";
+// Konstanten
+const port = 3000; // Port 3000 (Weiterleitung von Nginx)
+const dbPath = "database/user_information.json"; // Pfad zur User-Datenbank
 
-// functions
 
-// adds user to db
+
+// Funktionen
+
+// User zur Datenbank hinzufügen
 function pushUser (user) {
 
     fs.readFile(dbPath, "utf8", (error, data) => {
@@ -53,7 +62,7 @@ function pushUser (user) {
     })
 }
 
-// check if user is in db
+// Prüfen ob User in der Datenbank ist und gibt den User zurück
 function getUser (user, callback) {
 
     fs.readFile(dbPath, "utf8", (error, data) => {
@@ -78,7 +87,12 @@ function getUser (user, callback) {
 
 }
 
-// get routes
+
+
+
+// Routen
+
+// GET-Routen
 app.get("/", (request, response) => {
     response.render("index.html");
 });
@@ -88,14 +102,11 @@ app.get("/login", (request, response) => {
 app.get("/register", (request, response) => {
     response.render("register.html");
 });
-app.get("/logout", (request, response) => {
-    request.session.destroy((err) => {
-        if (err) {
-            return response.status(500).send("Fehler beim Logout.");
-        }
-        response.send('<script>alert("Sie wurden ausgeloggt."); window.location.href="/login";</script>');
-    });
+app.get("/impressum", (request, response) => {
+    response.render("impressum.html");
 });
+
+// Geschützte Seiten, die nur nach Anmeldung aufgerufen werden können
 app.get("/calculator", (request, response) => {
     if (!request.session.user) {
         return response.status(403).render("denied.html");
@@ -108,15 +119,24 @@ app.get("/training", (request, response) => {
     }
     response.render("trainingsplan.html");
 });
-app.get("/impressum", (request, response) => {
-    response.render("impressum.html");
-});
 app.get("/profile", (request, response) => {
     if (!request.session.user) {
         return response.status(403).render("denied.html");
     }
     response.render("profile.html");
 });
+
+// Logout (Session wird gelöscht)
+app.get("/logout", (request, response) => {
+    request.session.destroy((err) => {
+        if (err) {
+            return response.status(500).send("Fehler beim Logout.");
+        }
+        // Weiterleitung zur Login-Seite
+        response.send('<script>alert("Sie wurden ausgeloggt."); window.location.href="/login";</script>');
+    });
+});
+// Prüfen ob der User eingeloggt ist
 app.get("/check-login", (request, response) => {
     if (request.session.user) {
         response.json({ loggedIn: true, username: request.session.user.username });
@@ -125,10 +145,10 @@ app.get("/check-login", (request, response) => {
     }
 });
 
-// post routes
-app.post("/", (request, response) => {
-    response.render("404.html");
-});
+
+
+// POST-Routen
+// Login => ruft getUser() auf
 app.post("/login", (request, response) => {
     var body = JSON.stringify(request.body);
     getUser(body, (error, user) => {
@@ -145,6 +165,7 @@ app.post("/login", (request, response) => {
         }
     });
 });
+// Register => ruft pushUser() auf
 app.post("/register", (request, response) => {
    var body = JSON.stringify(request.body);
    var error = pushUser(body);
@@ -154,7 +175,8 @@ app.post("/register", (request, response) => {
 });
 
 
-// main listen
+
+// Express starten
 app.listen(port, () => {
     console.log(`NodeJS-Server running on port localhost:${port}`);
 });
