@@ -208,6 +208,15 @@ iframe {
     border: 1px solid #ccc; /* Rahmen */
 }
 
+.login-container select {
+    width: 100%; /* Volle Breite */
+    padding: 10px;
+    margin: 10px 0; /* Abstand oben und unten */
+    margin-top: 0;
+    border-radius: 5px; /* Abgerundete Ecken */
+    border: 1px solid #ccc; /* Rahmen */
+}
+
 .login-container button {
     background-color: #2e558f; /* Button-Hintergrundfarbe */
     color: white; /* Button-Textfarbe */
