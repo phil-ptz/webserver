@@ -3,14 +3,12 @@
   <head>
     <title>FitGuide</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
     <script src="/script/main.js"></script>
   </head>
-
   <body>
-
     <header>
       <nav class="navbar">
         <div class="navbar-title">Home</div>
@@ -24,6 +22,7 @@
     </header>
 
     <main>
+      <!-- Hero-Bild -->
       <section id="start-section">
           <div>
               <h2>FitGuide</h2>
@@ -31,16 +30,48 @@
                 Kostenloser Guide für Sport und Ernährung.
               </p>
           </div>        
-        </div>
       </section>
 
+      <!-- Beschreibung und Button -->
       <section id="info-section">
-          <h2>Was wir anbieten...</h2>
-          <div>
-            <p>Punkt 1</p>
-            <p>Punkt 2</p>
-            <p>Punkt 3</p>
-            <p>Punkt 4</p>
+          <div class="info-content">
+              <div class="description">
+                  <h2>Was wir anbieten...</h2>
+                  <p>Punkt 1</p>
+                  <p>Punkt 2</p>
+                  <p>Punkt 3</p>
+                  <p>Punkt 4</p>
+              </div>
+              <button class="register-button" onclick="window.location='/register';">
+                  Jetzt registrieren und Vorteile nutzen
+              </button>
+          </div>
+
+          <!-- Angebotshinweis -->
+          <div class="offer-notice">
+              <p>Nur noch <strong>9 kostenlose Plätze</strong> verfügbar!</p>
+          </div>
+
+          <!-- Überschrift über den Rezensionen -->
+          <h2 class="reviews-title">Unsere Nutzer sind zufrieden</h2>
+
+          <!-- Fake-Rezensionen -->
+          <div class="reviews">
+              <div class="review">
+                  <h3>Max Mustermann</h3>
+                  <p>⭐⭐⭐⭐⭐</p>
+                  <p>"FitGuide hat mein Leben verändert! Endlich ein kostenloser Guide, der wirklich hilft."</p>
+              </div>
+              <div class="review">
+                  <h3>Lisa Müller</h3>
+                  <p>⭐⭐⭐⭐</p>
+                  <p>"Tolle Tipps für Sport und Ernährung. Sehr empfehlenswert!"</p>
+              </div>
+              <div class="review">
+                  <h3>Tom Schmidt</h3>
+                  <p>⭐⭐⭐⭐⭐</p>
+                  <p>"Einfach und effektiv. Ich bin begeistert!"</p>
+              </div>
           </div>
       </section>
     </main>
@@ -49,4 +80,6 @@
       <p><a id="impressum-link" href="/impressum">2025 FitGuide</a></p>
     </footer>    
   </body>
+</html>
+
 </html>
