@@ -31,7 +31,7 @@ label {
 
 button {
     display: block;
-    width: 100%; /* Volle Breite */
+    width: 100%; /* Volle Breite – global gesetzt */
     padding: 10px;
     background-color: #0056b3; /* Button-Hintergrundfarbe */
     color: white; /* Button-Textfarbe */
@@ -159,8 +159,9 @@ iframe {
 }
 
 /* Index-Seite */
+/* Hero-Bild */
 #start-section {
-    background-image: url(/media/img/start.jpg); /* Hintergrundbild */
+    background-image: url(/media/img/start.jpg);
     background-color: #222; /* Fallback-Hintergrundfarbe */
     width: 100%;
     height: 100%;
@@ -172,8 +173,9 @@ iframe {
     font-size: larger; /* Größere Schrift */
 }
 
+/* Beschreibung und Button in der Info-Sektion */
 #info-section {
-    text-align: center; /* Zentriert den Text */
+    text-align: center;
     padding: 20px;
     background-color: white; /* Hintergrundfarbe */
 }
@@ -182,11 +184,66 @@ iframe {
     margin-bottom: 20px; /* Abstand unter der Überschrift */
 }
 
-#info-section div {
+/* Elemente in der Info-Sektion nebeneinander anordnen */
+.info-content {
     display: flex;
-    flex-direction: column; /* Layout als Spalte */
-    align-items: center; /* Zentriert die Punkte */
-    gap: 10px; /* Abstand zwischen den Punkten */
+    flex-direction: row; /* Nebeneinander */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    gap: 40px; /* Abstand zwischen den Elementen */
+    margin-bottom: 20px; /* Abstand zum Angebotshinweis */
+}
+
+.description {
+    text-align: left; /* Linksbündig */
+    max-width: 500px; /* Maximale Breite der Beschreibung */
+    flex: 1; /* Nimmt verfügbaren Platz ein */
+}
+
+/* Hier wird der Register-Button angepasst */
+.register-button {
+    flex: 0 0 auto; /* Beibehaltung der ursprünglichen Breite */
+    width: auto;     /* Überschreibt den globalen 100%-Wert */
+}
+
+/* Angebotshinweis */
+.offer-notice {
+    margin: 20px 0; /* Abstand oben und unten */
+    font-size: 1.2em; /* Größere Schrift */
+    color: #d9534f; /* Auffällige Farbe */
+}
+
+/* Überschrift für die Rezensionen */
+.reviews-title {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Fake-Rezensionen */
+.reviews {
+    display: flex;
+    justify-content: center; /* Zentriert die Rezensionen horizontal */
+    gap: 20px; /* Abstand zwischen den Rezensionen */
+    margin-top: 20px; /* Abstand zum Angebotshinweis */
+    flex-wrap: nowrap; /* Erzwingt eine Zeile – bei zu wenig Platz kann ein horizontaler Scroll entstehen */
+}
+
+.review {
+    background-color: #f9f9f9; /* Hintergrundfarbe */
+    padding: 20px;
+    border-radius: 8px; /* Abgerundete Ecken */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten */
+    width: 300px; /* Feste Breite */
+    text-align: center; /* Zentrierter Text */
+}
+
+.review h3 {
+    margin: 0 0 10px; /* Abstand unter dem Namen */
+    font-size: 1.2em; /* Größere Schrift */
+}
+
+.review p {
+    margin: 5px 0; /* Abstand zwischen den Absätzen */
 }
 
 /* Login-Seite */
@@ -204,15 +261,6 @@ iframe {
     width: 100%; /* Volle Breite */
     padding: 10px;
     margin: 10px 0; /* Abstand oben und unten */
-    border-radius: 5px; /* Abgerundete Ecken */
-    border: 1px solid #ccc; /* Rahmen */
-}
-
-.login-container select {
-    width: 100%; /* Volle Breite */
-    padding: 10px;
-    margin: 10px 0; /* Abstand oben und unten */
-    margin-top: 0;
     border-radius: 5px; /* Abgerundete Ecken */
     border: 1px solid #ccc; /* Rahmen */
 }
