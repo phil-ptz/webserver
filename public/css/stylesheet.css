@@ -13,14 +13,16 @@ body {
 	height: 100vh;
 }
 
+/* Flexibles Layout für den Hauptbereich */
 main {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 80vh;
-	flex: 1;
-	flex-direction: column;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Oben ausrichten */
+    padding: 20px 0; /* Abstand zur Navbar und zum Footer */
+    overflow-y: auto; /* Scrollbar, falls der Inhalt zu lang ist */
 }
+
 
 main p {
 	padding: 0;
@@ -139,17 +141,24 @@ header {
 }
 
 /* footer */
+/* Footer immer am unteren Rand */
 footer {
-	text-align: center;
-	border-top: 1px solid #ccc;
-	background-color: #ccc;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    background-color: #ccc;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 /*trainingsplan*/
-
+/* Trainingsplan-spezifische Anpassungen */
 .container {
     max-width: 1200px;
-    margin: 0 auto;
+    max-height: calc(100vh - 150px); /* Berücksichtigt Navbar und Footer */
+    overflow-y: auto; /* Scrollbar, falls der Inhalt zu lang ist */
+    margin: 20px auto; /* Abstand zur Navbar */
     background: white;
     padding: 20px;
     border-radius: 8px;
@@ -190,11 +199,13 @@ footer {
     color: #333;
 }
 
+/* Video-Container */
 #videoContainer {
     margin-top: 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
+    padding-bottom: 20px; /* Abstand zum Footer */
 }
 
 iframe {
