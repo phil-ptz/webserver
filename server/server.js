@@ -129,7 +129,11 @@ function saveData(body, request) {
 
 // GET-Routen
 app.get("/", (request, response) => {
-    response.render("index.html");
+    if (!request.session.user) {
+        response.render("index.html");
+    } else {
+        response.render("Menu.html");
+    }
 });
 app.get("/login", (request, response) => {
     response.render("login.html");
@@ -159,6 +163,12 @@ app.get("/profile", (request, response) => {
         return response.status(403).render("denied.html");
     }
     response.render("profile.html");
+});
+app.get("/menu", (request, response) => {
+    if (!request.session.user) {
+        return response.status(403).render("denied.html");
+    }
+    response.render("Menu.html");
 });
 
 
@@ -250,7 +260,7 @@ app.post("/login", (request, response) => {
             if (user) {
                 request.session.user = { username: user.username };
                 //response.render("index.html")
-                response.send('<script>alert("Erfolgreich eingeloggt."); window.location.href="/";</script>');
+                response.send('<script>alert("Erfolgreich eingeloggt."); window.location.href="/menu";</script>');
             } else {
                 response.status(401).send('<script>alert("Falsche Zugangsdaten."); window.location.href="/login";</script>');
             }
