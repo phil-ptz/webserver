@@ -4,10 +4,10 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
+/* Scrollleiste deaktivieren und flüssiges Scrollen*/
 ::-webkit-scrollbar {
     display: none;
 }
-
 html {
     scroll-behavior: smooth;
 }

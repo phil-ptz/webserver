@@ -166,11 +166,11 @@ function deleteUser(username) {
 
 // GET-Routen
 app.get("/", (request, response) => {
-    // Leite Benutzer zur Menu.html wenn wer angemeldet ist
+    // Leite Benutzer zur menu.html wenn wer angemeldet ist
     if (!request.session.user) {
         response.render("index.html");
     } else {
-        response.render("Menu.html");
+        response.render("menu.html");
     }
 });
 app.get("/login", (request, response) => {
@@ -207,7 +207,7 @@ app.get("/menu", (request, response) => {
     if (!request.session.user) {
         return response.status(403).render("denied.html");
     }
-    response.render("Menu.html");
+    response.render("menu.html");
 });
 
 
