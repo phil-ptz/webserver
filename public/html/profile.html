@@ -1,35 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="de">
   <head>
-    <title>FitGuide</title>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FitGuide - Profil</title>
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/css/darkmode.css"
+      id="darkmode-stylesheet"
+      disabled
+    />
   </head>
-
   <body>
-
     <header>
       <nav class="navbar">
         <div class="navbar-title">Account</div>
         <ul class="navbar-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/calculator">Rechner</a></li>
-            <li><a href="/training">Trainingsplan</a></li>
-            <li><div class="login-button" onclick="window.location='/logout';">Logout</div></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/calculator">Rechner</a></li>
+          <li><a href="/training">Trainingsplan</a></li>
+          <li>
+            <div class="login-button" onclick="window.location='/logout';">
+              Logout
+            </div>
+          </li>
         </ul>
       </nav>
     </header>
 
     <main>
-      
+      <section class="profile-section">
+        <h2>Profilinformationen</h2>
+        <div class="profile-info">
+          <p>
+            <strong>Name:</strong><input type="text" id="user-name" required placeholder="Name"/>
+          </p>
+          <p>
+            <strong>Email:</strong><input type="text" id="user-name" required placeholder="deine@email.de"/>
+          </p>
+          <p><strong>Alter:</strong>
+            <input type="text" id="user-name" required placeholder="Alter"/>
+          </p>
+        </div>
+      </section>
+
+      <section class="settings-section">
+        <h2>Einstellungen</h2>
+        <div class="settings-item">
+          <label for="darkmode-toggle">Darkmode:</label>
+          <input
+            type="checkbox"
+            id="darkmode-toggle"
+            onclick="toggleDarkMode()"
+          />
+        </div>
+      </section>
     </main>
 
     <footer>
       <p>&copy; 2025 FitGuide</p>
     </footer>
-    
+
+    <script>
+      function toggleDarkMode() {
+        const darkModeStylesheet = document.getElementById(
+          "darkmode-stylesheet"
+        );
+        darkModeStylesheet.disabled = !darkModeStylesheet.disabled;
+      }
+    </script>
   </body>
 </html>
-
