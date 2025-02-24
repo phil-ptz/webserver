@@ -14,11 +14,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function calculateCalories() {
-  const age = document.getElementById("age").value;
-  const height = document.getElementById("height").value;
-  const weight = document.getElementById("weight").value;
+  const age = parseFloat(document.getElementById("age").value);
+  const height = parseFloat(document.getElementById("height").value);
+  const weight = parseFloat(document.getElementById("weight").value);
   const gender = document.getElementById("gender").value;
   const goal = document.getElementById("goal").value;
+
+  if (isNaN(age) || isNaN(height) || isNaN(weight) || age <= 0 || height <= 0 || weight <= 0 || height > 300 || weight > 300) {
+    document.getElementById("calories-result").innerText = "Bitte gib gültige Nummern an.";
+    return;
+  }
 
   let bmr;
   if (gender === "male") {
@@ -34,6 +39,10 @@ function calculateCalories() {
     calories = bmr + 500;
   }
 
+  if (calories < 0) {
+    calories = 0;
+  }
+
   document.getElementById(
     "calories-result"
   ).innerText = `Du solltest täglich ${calories.toFixed(
@@ -42,8 +51,13 @@ function calculateCalories() {
 }
 
 function calculateBMI() {
-  const height = document.getElementById("bmi-height").value / 100;
-  const weight = document.getElementById("bmi-weight").value;
+  const height = parseFloat(document.getElementById("bmi-height").value) / 100;
+  const weight = parseFloat(document.getElementById("bmi-weight").value);
+
+  if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0 || height > 3 || weight > 300) {
+    document.getElementById("bmi-result").innerText = "Bitte gib gültige Nummern an.";
+    return;
+  }
 
   const bmi = weight / (height * height);
 
@@ -63,7 +77,7 @@ function calculate1RM() {
 
   const oneRepMax = weight * (1 + reps / 30);
 
-  document.getElementById("repmax-result").innerText = `Dein Erwarteter PR ist: ${oneRepMax.toFixed(2)}`;
+  document.getElementById("repmax-result").innerText = `Dein Erwarteter PR ist: ${oneRepMax.toFixed(2)}kg`;
 }
 
 function submitForm() {
