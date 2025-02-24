@@ -12,12 +12,12 @@ var session = require("express-session");
 const express = require("express");
 const app = express();
 
-// Initialisierung der Session von express-session
+// Initialisierung der Session mit Cookie von express-session
 app.use(session({
     secret: "1234",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }
+    cookie: { secure: false , maxAge: 30*60} // Cookie wird nicht verschlüsselt und hat eine Dauer von 30 Minuten
 }));
 
 // Für das Parsen der POST-Daten
