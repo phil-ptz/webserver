@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   // check if user is logged => change navbar accordingly
   fetch("/check-login")
@@ -78,6 +79,23 @@ function calculate1RM() {
   const oneRepMax = weight * (1 + reps / 30);
 
   document.getElementById("repmax-result").innerText = `Dein Erwarteter PR ist: ${oneRepMax.toFixed(2)}kg`;
+}
+
+// Ausgerechnete Daten an den Server senden
+function sendData() {
+  // Ausgerechnete Werte
+  var bmi = document.getElementById("bmi-result").innerText;
+  var calories = document.getElementById("calories-result").innerText;
+  var repmax = document.getElementById("repmax-result").innerText;
+
+  fetch("http://localhost:3000/calculator", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ bmi: bmi, calories: calories, repmax: repmax })
+  })
+  .then(response => response.json())
+  .then(data => console.log("Server-Antwort:", data))
+  .catch(error => console.error("Fehler:", error));
 }
 
 function submitForm() {

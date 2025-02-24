@@ -87,6 +87,42 @@ function getUser (user, callback) {
 
 }
 
+// Daten in der Datenbank speichern
+function saveData(body, request) {
+
+    var username = request.session.user.username;
+  
+    fs.readFile(dbPath, "utf8", (error, data) => {
+        if (error) {
+            console.log("Fehler beim laden der Datenbank.");
+            console.log(error);
+            return error;
+        }
+        dataObject = JSON.parse(data);
+        bodyObject = JSON.parse(body);
+        console.log(dataObject, username)
+
+        for (var user of dataObject) {
+            if (user["username"] == username) {
+                var merged = {...user, ...bodyObject}
+
+                const index = dataObject.findIndex(user => user.username === username);
+                dataObject[index] = merged;
+
+                fs.writeFile(dbPath, JSON.stringify(dataObject), (error) => {
+                    if (error) {
+                        console.log("Fehler beim Speichern der Daten.");
+                        console.log(error);
+                        return error;
+                    } else {
+                        console.log("Daten erfolgreich gespeichert.");
+                    }
+                });
+            }
+        }
+    });
+}
+
 
 
 
@@ -172,6 +208,11 @@ app.post("/register", (request, response) => {
    if (error == null) {
         response.send('<script>alert("Sie wurden registriert, bitte melden Sie sich an."); window.location.href="/login";</script>');
    }
+});
+// Rechner-Daten speichern
+app.post("/calculator", (request, response) => {
+    var body = JSON.stringify(request.body);
+    saveData(body, request)
 });
 
 
