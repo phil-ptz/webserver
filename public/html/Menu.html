@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>FitGuide</title>
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
@@ -13,10 +13,14 @@
       <nav class="navbar">
         <div class="navbar-title">Home</div>
         <ul class="navbar-links">
-            <li><a href="/">Home</a></li>
-            <li><a href="/calculator">Rechner</a></li>
-            <li><a id="training-link" href="/training">Trainingsplan</a></li>
-            <li><div class="login-button" onclick="window.location='/register';">Anmeldung</div></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/calculator">Rechner</a></li>
+          <li><a id="training-link" href="/training">Trainingsplan</a></li>
+          <li>
+            <div class="login-button" onclick="window.location='/register';">
+              Anmeldung
+            </div>
+          </li>
         </ul>
       </nav>
     </header>
@@ -24,18 +28,55 @@
     <main>
       <!-- Hero-Bild -->
       <section id="start-section">
-          <div class="login-container">
-              <h2>FitGuide</h2>
-              <p>
-                Kostenloser Guide für Sport und Ernährung.
-              </p>
-              <a href="#info-section"><img src="media/img/arrow_down.png" alt="Weiter" width="100px"></a>
-          </div>        
+        <div class="login-container">
+          <h2>FitGuide</h2>
+          <p>Kostenloser Guide für Sport und Ernährung.</p>
+          <a href="#video-section"
+            ><img src="media/img/arrow_down.png" alt="Weiter" width="100px"
+          /></a>
+        </div>
+      </section>
+
+      <!-- Video und Menü -->
+      <section id="video-section">
+        <h2>Aktuelles Empfohlenes</h2>
+        <h2> Rezept der Redaktion</h2>
+        <div class="video-menu-container">
+          <!-- YouTube-Video -->
+          <div class="video-wrapper">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/jQymuMZrLVw"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+
+          <!-- Menü für Rechner und Trainingsplan -->
+          <div class="menu-wrapper">
+            <h3>Menü</h3>
+            <ul class="menu-options">
+              <li>
+                <button onclick="window.location='/calculator';">
+                  Zum Rechner
+                </button>
+              </li>
+              <li>
+                <button onclick="window.location='/training';">
+                  Zum Trainingsplan
+                </button>
+              </li>
+            </ul>
+          </div>
+        </div>
       </section>
     </main>
 
     <footer>
       <p><a id="impressum-link" href="/impressum">2025 FitGuide</a></p>
-    </footer>    
+    </footer>
   </body>
 </html>
