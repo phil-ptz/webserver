@@ -135,5 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             iframe.allowFullscreen = true;
             videoContainer.appendChild(iframe);
         });
+        // Automatisch zum Video-Container scrollen
+        videoContainer.scrollIntoView({ behavior: 'smooth' }); // Sanftes Scrollen
     });
 });
