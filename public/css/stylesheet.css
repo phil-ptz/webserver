@@ -110,6 +110,7 @@ footer {
     border-top: 1px solid #ccc;
     background-color: #ccc;
     padding: 10px 0;
+    margin-top: 50px; /* Abstand Footer/Inhalt*/
 }
 
 /* Container */
@@ -217,11 +218,12 @@ iframe {
 }
 
 .offer-notice {
-    margin: 20px 0;
+    margin-top: 20px;  /* Abstand zum Button */
     font-size: 1.2em;
     color: #d9534f;
     text-align: center;
 }
+
 
 .reviews {
     display: flex;
