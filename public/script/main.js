@@ -2,7 +2,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // check if user is logged => change navbar accordingly
   fetch("/check-login")
-      .then(res => res.json())
+      .then(response => response.json())
       .then(data => {
           document.querySelectorAll(".login-button").forEach(navUser => {
               if (data.loggedIn) {
@@ -88,7 +88,7 @@ function sendData() {
   var calories = document.getElementById("calories-result").innerText;
   var repmax = document.getElementById("repmax-result").innerText;
 
-  fetch("http://localhost:3000/calculator", {
+  fetch("/calculator", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ bmi: bmi, calories: calories, repmax: repmax })
@@ -96,6 +96,8 @@ function sendData() {
   .then(response => response.json())
   .then(data => console.log("Server-Antwort:", data))
   .catch(error => console.error("Fehler:", error));
+
+  alert("Werte wurden in deinem Profil gespeichert.")
 }
 
 function submitForm() {
@@ -110,4 +112,13 @@ function submitForm() {
   }
 
   return true;
+}
+
+function deleteUser() {
+  fetch("/delete")
+  .then(() => {
+    alert("Ihr Account wurde gelöscht.");
+    window.location.href = "/login";
+  })
+  .catch(error => console.error("Fehler:", error));
 }

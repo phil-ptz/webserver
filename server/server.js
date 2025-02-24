@@ -100,7 +100,6 @@ function saveData(body, request) {
         }
         dataObject = JSON.parse(data);
         bodyObject = JSON.parse(body);
-        console.log(dataObject, username)
 
         for (var user of dataObject) {
             if (user["username"] == username) {
@@ -162,6 +161,9 @@ app.get("/profile", (request, response) => {
     response.render("profile.html");
 });
 
+
+// APIs
+
 // Logout (Session wird gelöscht)
 app.get("/logout", (request, response) => {
     request.session.destroy((err) => {
@@ -172,13 +174,69 @@ app.get("/logout", (request, response) => {
         response.send('<script>alert("Sie wurden ausgeloggt."); window.location.href="/login";</script>');
     });
 });
-// Prüfen ob der User eingeloggt ist
+// Account löschen + Logout
+app.get("/delete", (request, response) => {
+    if (!request.session.user) {
+        return response.status(401).send("Nicht eingeloggt.");
+    }
+
+    var username = request.session.user.username;
+
+    fs.readFile(dbPath, "utf8", (error, data) => {
+        if (error) {
+            console.log("Fehler beim Laden der Datenbank.");
+            console.log(error);
+            return response.status(500).send("Fehler beim Laden der Datenbank.");
+        }
+        
+        let dataObject = JSON.parse(data);
+
+        // Nutzer aus der Liste filtern
+        dataObject = dataObject.filter(user => user.username !== username);
+
+        // Aktualisierte Datenbank speichern
+        fs.writeFile(dbPath, JSON.stringify(dataObject), (error) => {
+            if (error) {
+                console.log("Fehler beim Speichern der Daten.");
+                console.log(error);
+                return response.status(500).send("Fehler beim Speichern der Daten.");
+            }
+
+            console.log("Account gelöscht und Daten gespeichert.");
+
+            // Session löschen und Weiterleitung
+            request.session.destroy((err) => {
+                if (err) {
+                    return response.status(500).send("Fehler beim Logout.");
+                }
+                response.send('<script>alert("Ihr Account wurde gelöscht."); window.location.href="/login";</script>');
+            });
+        });
+    });
+});
+// Prüfen ob der User eingeloggt ist + Benutzername geben
 app.get("/check-login", (request, response) => {
     if (request.session.user) {
         response.json({ loggedIn: true, username: request.session.user.username });
     } else {
         response.json({ loggedIn: false });
     }
+});
+// Profildaten bekommen
+app.get("/get-profile", (request, response) => {
+    fs.readFile(dbPath, "utf8", (error, data) => {
+        if (error) {
+            return response.status(500).send("Fehler beim Laden der Datenbank.");
+        }
+        if (!request.session.user) {
+            return response.status(403).send("Nicht Authorisiert.");
+        }
+        dataObject = JSON.parse(data);
+        username = request.session.user.username;
+        const index = dataObject.findIndex(user => user.username === username);
+        
+        response.json(dataObject[index]);
+    });
 });
 
 
@@ -194,7 +252,7 @@ app.post("/login", (request, response) => {
                 //response.render("index.html")
                 response.send('<script>alert("Erfolgreich eingeloggt."); window.location.href="/";</script>');
             } else {
-                response.status(401).send("Falsche Zugangsdaten.");
+                response.status(401).send('<script>alert("Falsche Zugangsdaten."); window.location.href="/login";</script>');
             }
         } else {
             return response.status(500).send("Fehler beim Verarbeiten der Anfrage.");
@@ -218,6 +276,10 @@ app.post("/calculator", (request, response) => {
 
 // 404 Für alle anderen Routes
 app.get('*', function(request, response){
+    response.status(404).render('404.html');
+});
+// 404 Für alle anderen Routes
+app.post('*', function(request, response){
     response.status(404).render('404.html');
 });
 

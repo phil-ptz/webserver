@@ -6,13 +6,8 @@
     <title>FitGuide - Profil</title>
     <link rel="icon" href="/media/img/icon/white/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="/css/darkmode.css"
-      id="darkmode-stylesheet"
-      disabled
-    />
+    <script src="/script/profile.js"></script>
+    <script src="/script/main.js"></script>
   </head>
   <body>
     <header>
@@ -23,7 +18,7 @@
           <li><a href="/calculator">Rechner</a></li>
           <li><a href="/training">Trainingsplan</a></li>
           <li>
-            <div class="login-button" onclick="window.location='/logout';">
+            <div class="login-button-profile" onclick="window.location='/logout';">
               Logout
             </div>
           </li>
@@ -33,29 +28,26 @@
 
     <main>
       <section class="profile-section">
-        <h2>Profilinformationen</h2>
+        <h2>Profil</h2>
         <div class="profile-info">
           <p>
-            <strong>Name:</strong><input type="text" id="user-name" required placeholder="Name"/>
+            <strong>Benutzername: </strong><p id="username">username</p>
           </p>
           <p>
-            <strong>Email:</strong><input type="text" id="user-name" required placeholder="deine@email.de"/>
+            <strong>Passwort: </strong><p id="password" data-password="hiddenPassword" style="cursor: pointer;">******</p>
           </p>
-          <p><strong>Alter:</strong>
-            <input type="text" id="user-name" required placeholder="Alter"/>
+          <p>
+            <strong>Body-Mass-Index: </strong><p id="bmi"></p>
+          </p>
+          <p>
+            <strong>Tägliche Kalorien: </strong><p id="calories"></p>
+          </p>
+          <p>
+            <strong>Rep-Max: </strong><p id="repmax"></p>
           </p>
         </div>
       </section>
-
-      <section class="settings-section">
-        <h2>Einstellungen</h2>
-        <div class="settings-item">
-          <label for="darkmode-toggle">Darkmode:</label>
-          <input
-            type="checkbox"
-            id="darkmode-toggle"
-            onclick="toggleDarkMode()"
-          />
+          <button id="delete-user" onclick="deleteUser()">Account löschen</button>
         </div>
       </section>
     </main>
@@ -64,13 +56,5 @@
       <p>&copy; 2025 FitGuide</p>
     </footer>
 
-    <script>
-      function toggleDarkMode() {
-        const darkModeStylesheet = document.getElementById(
-          "darkmode-stylesheet"
-        );
-        darkModeStylesheet.disabled = !darkModeStylesheet.disabled;
-      }
-    </script>
   </body>
 </html>

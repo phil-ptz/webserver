@@ -96,7 +96,7 @@ button:hover {
     color: #ffcc00;
 }
 
-.login-button {
+.login-button, .login-button-profile {
     background-color: white;
     color: black;
     border-radius: 2px;
@@ -298,4 +298,15 @@ main a {
 
 main a:hover {
     text-decoration: underline;
+}
+
+#delete-user {
+    background-color: red;
+    color: white;
+    width: 200px;
+    margin: 30px;
+}
+
+.profile-section {
+    text-align: center;
 }
