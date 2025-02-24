@@ -258,6 +258,7 @@ app.post("/login", (request, response) => {
     getUser(body, (error, user) => {
         if (error == null) {
             if (user) {
+                // user in session speichern
                 request.session.user = { username: user.username };
                 //response.render("index.html")
                 response.send('<script>alert("Erfolgreich eingeloggt."); window.location.href="/menu";</script>');
