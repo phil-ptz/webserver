@@ -27,34 +27,34 @@
     </header>
 
     <main>
-      <section class="profile-section">
-        <h2>Profil</h2>
-        <div class="profile-info">
-          <p>
-            <strong>Benutzername: </strong><p id="username">username</p>
-          </p>
-          <p>
-            <strong>Passwort: </strong><p id="password" data-password="hiddenPassword" style="cursor: pointer;">******</p>
-          </p>
-          <p>
-            <strong>Body-Mass-Index: </strong><p id="bmi"></p>
-          </p>
-          <p>
-            <strong>Tägliche Kalorien: </strong><p id="calories"></p>
-          </p>
-          <p>
-            <strong>Rep-Max: </strong><p id="repmax"></p>
-          </p>
-        </div>
-      </section>
-          <button id="delete-user" onclick="deleteUser()">Account löschen</button>
-        </div>
-      </section>
+      <div class="container">
+        <section class="profile-section">
+          <h2>Profil</h2>
+          <div class="login-container">
+            <div class="profile-info"></div>
+              <strong>Benutzername: </strong>
+              <p id="username">username</p>
+
+              <strong>Passwort: </strong>
+              <p id="password" data-password="hiddenPassword" style="cursor: pointer;">******</p>
+
+              <strong>Body-Mass-Index: </strong>
+              <p id="bmi"></p>
+
+              <strong>Tägliche Kalorien: </strong>
+              <p id="calories"></p>
+
+              <strong>Rep-Max: </strong>
+              <p id="repmax"></p>
+              <button id="delete-user" onclick="deleteUser()">Account löschen</button>
+            </div>
+          </div>
+        </section>
+      </div>
     </main>
 
     <footer>
       <p><a id="impressum-link" href="/impressum">&copy; 2025 FitGuide</a></p>
     </footer>
-
   </body>
 </html>
