@@ -1,16 +1,19 @@
 // Skript für die Navbar
 
-/* Prüft, ob der Nutzer eingeloggt ist und passt die Navbar an (aus dem Anmelde Knopf wird ein Profilbutton*/
+// Prüfen ob der Benutzer eingeloggt ist => Benutzernamen in der NavBar anzeigen
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("/check-login")
-      .then(response => response.json())
-      .then(data => {
-          document.querySelectorAll(".login-button").forEach(navUser => {
-              if (data.loggedIn) {
-                  navUser.innerHTML = `${data.username}`;
-                  navUser.onclick = function () {window.location = "/profile";};
-              }
-        });
-      })
-      .catch(error => console.error("Fehler beim Laden des Login-Status:", error));
+
+    // GET-Anfrage an /check-login
+    fetch("/check-login")
+        .then(response => response.json())
+        .then(data => {
+            // Login-Button ändern und Link auf /profile ändern
+            document.querySelectorAll(".login-button").forEach(navUser => {
+                if (data.loggedIn) {
+                    navUser.innerHTML = `${data.username}`;
+                    navUser.onclick = function () {window.location = "/profile";};
+                }
+            });
+        })
+        .catch(error => console.error("Fehler beim Laden des Login-Status:", error));
 });
