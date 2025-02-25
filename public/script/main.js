@@ -1,6 +1,5 @@
-
+/* Prüft, ob der Nutzer eingeloggt ist und passt die Navbar an (aus dem Anmelde Knopf wird ein Profilbutton*/
 document.addEventListener("DOMContentLoaded", function () {
-  // check if user is logged => change navbar accordingly
   fetch("/check-login")
       .then(response => response.json())
       .then(data => {
@@ -14,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch(error => console.error("Fehler beim Laden des Login-Status:", error));
 });
 
+/* Rechner für den Grundumsatz nach Harris-Benedict */
 function calculateCalories() {
   const age = parseFloat(document.getElementById("age").value);
   const height = parseFloat(document.getElementById("height").value);
@@ -51,6 +51,7 @@ function calculateCalories() {
   )} Kalorien zu dir nehmen.`;
 }
 
+/* Rechner für den BMI */
 function calculateBMI() {
   const height = parseFloat(document.getElementById("bmi-height").value) / 100;
   const weight = parseFloat(document.getElementById("bmi-weight").value);
@@ -67,6 +68,7 @@ function calculateBMI() {
   ).innerText = `Dein BMI beträgt: ${bmi.toFixed(2)}`;
 }
 
+/* Rechner für den 1RM nach Epley */
 function calculate1RM() {
   const weight = parseFloat(document.getElementById("repmax-weight").value);
   const reps = parseFloat(document.getElementById("repmax-reps").value);
@@ -81,9 +83,9 @@ function calculate1RM() {
   document.getElementById("repmax-result").innerText = `Dein Erwarteter PR ist: ${oneRepMax.toFixed(2)}kg`;
 }
 
-// Ausgerechnete Daten an den Server senden
+/* Sendet errechnete Daten an den Server*/
 function sendData() {
-  // Ausgerechnete Werte
+  /* Errechnete Werte */
   var bmi = document.getElementById("bmi-result").innerText;
   var calories = document.getElementById("calories-result").innerText;
   var repmax = document.getElementById("repmax-result").innerText;
@@ -100,6 +102,7 @@ function sendData() {
   alert("Werte wurden in deinem Profil gespeichert.")
 }
 
+/* Überprüft, ob die Passwörter beim registrieren übereinstimmen */
 function submitForm() {
   var passwordInput = document.getElementById("password-input");
   var confirmPasswordInput = document.getElementById("confirm-password-input");
@@ -114,6 +117,7 @@ function submitForm() {
   return true;
 }
 
+/* Löscht den Account des Nutzers */
 function deleteUser() {
   fetch("/delete")
   .then(() => {
