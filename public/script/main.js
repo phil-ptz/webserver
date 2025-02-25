@@ -1,3 +1,5 @@
+// Main-Skript für restlichen Funktionen
+
 
 document.addEventListener("DOMContentLoaded", function () {
   // check if user is logged => change navbar accordingly

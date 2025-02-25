@@ -1,3 +1,6 @@
+// Skript für trainingsplan.html
+// Zeigt die Videos, je nach Auswahl an.
+
 document.addEventListener('DOMContentLoaded', function() {
     const categoryInputs = document.querySelectorAll('input[name="category"]');
     const locationInputs = document.querySelectorAll('input[name="location"]');
