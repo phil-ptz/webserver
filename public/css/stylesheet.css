@@ -297,6 +297,7 @@ iframe {
 main p,
 main a {
   margin: 10px 0;
+  padding-top: 15px;
 }
 
 main a {
