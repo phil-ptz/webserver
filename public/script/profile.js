@@ -29,3 +29,13 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
   });
+
+// Sendet Anfrage zum Löschen vom Account des Nutzers aus der Datenbank
+function deleteUser() {
+    fetch("/delete")
+    .then(() => {
+      alert("Ihr Account wurde gelöscht.");
+      window.location.href = "/login";
+    })
+    .catch(error => console.error("Fehler:", error));
+}
