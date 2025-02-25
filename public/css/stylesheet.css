@@ -416,24 +416,3 @@ main a:hover {
   min-height: 300px;
   min-width: 200px;
 }
-/* Cookie-Banner */
-.cookie-banner {
-  position: fixed;
-  bottom: 10%;
-  left: 50%;
-  transform: translate(-50%, 25%);
-  width: 50%;
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
-  z-index: 1000;
-  border-radius: 15px;
-}
-.cookie-banner button {
-  background-color: #2e558f;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-}
