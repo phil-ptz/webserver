@@ -1,10 +1,37 @@
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>404</title>
-</head>
-<body>
-    <main><h1>404 - Diese Seite existiert nicht.</h1></main>
-</body>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FitGuide</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="icon" href="/media/img/icon/white/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/css/stylesheet.css" />
+    <script src="/script/navbar.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <nav class="navbar">
+        <div class="navbar-title">Home</div>
+        <ul class="navbar-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/calculator">Rechner</a></li>
+            <li><a id="training-link" href="/training">Trainingsplan</a></li>
+            <li><div class="login-button" onclick="window.location='/register';">Anmeldung</div></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="access-denied">
+        <h1>Error 404 - Diese Seite existiert nicht.</h1>
+        <button onclick="window.location='/';">Zurück zur Startseite</button>
+      </section>
+    </main>
+
+    <footer>
+      <p><a id="impressum-link" href="/impressum">&copy; 2025 FitGuide</a></p>
+    </footer>    
+  </body>
 </html>
